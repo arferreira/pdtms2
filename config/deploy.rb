@@ -17,7 +17,7 @@ default_run_options[:pty] = true
 
 set :repository, 'git@github.com:arferreira/pdtms.git'
 
-set :branch, 'newrails'
+set :branch, 'master'
 
 set :deploy_via, :remote_cache
 
