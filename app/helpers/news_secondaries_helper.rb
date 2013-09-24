@@ -1,0 +1,2 @@
+module NewsSecondariesHelper
+end

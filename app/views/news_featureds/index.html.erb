@@ -1,0 +1,33 @@
+<h1>Listing news_featureds</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Content</th>
+    <th>Newscategory</th>
+    <th>Author</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @news_featureds.each do |news_featured| %>
+  <tr>
+    <td><%= news_featured.title %></td>
+    <td><%= news_featured.description %></td>
+    <td><%= news_featured.content %></td>
+    <td><%= news_featured.newscategory_id %></td>
+    <td><%= news_featured.author %></td>
+    <td><%= news_featured.date %></td>
+    <td><%= link_to 'Show', news_featured %></td>
+    <td><%= link_to 'Edit', edit_news_featured_path(news_featured) %></td>
+    <td><%= link_to 'Destroy', news_featured, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New News featured', new_news_featured_path %>

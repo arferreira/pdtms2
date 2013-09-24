@@ -1,0 +1,91 @@
+.list_work{ width:100%; float:left; margin-bottom:60px; position:relative !important;}
+.list_work h2{ float:left; font-weight:700; border-bottom:1px solid #ddd; width:100%; padding-bottom: 10px;}
+
+.jcarousel-skin-tango .jcarousel-container {
+	width:100%;
+	padding:0;
+	float:left;
+/*	overflow:hidden;*/
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    max-width: 100%;
+    padding:0;
+	margin:0;
+}
+
+.jcarousel-skin-tango .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+	top:2%;
+    width: 100%;
+}
+.jcarousel-skin-tango .jcarousel-item {
+	float:left;
+    width: 245px;
+	height:235px;
+	opacity:1;
+	text-align:left;
+    position: relative;
+}
+.jcarousel-skin-tango .jcarousel-item img{ margin-bottom:0; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; position: relative;}
+.jcarousel-skin-tango .jcarousel-item span{ color:#141414; font-size:14px; font-family: 'Open Sans', sans-serif; display:block; font-weight:600; width:100%;  } 
+.jcarousel-skin-tango .jcarousel-item small{ color:#8a8a8a; font-size:11px;}
+.jcarousel-skin-tango .jcarousel-item:hover span{ color:#eb6767;}
+.jcarousel-skin-tango .jcarousel-item:hover {
+	opacity:1;
+}
+.jcarousel-skin-tango .jcarousel-item:hover h2.entry-title{ display: none;}
+.jcarousel-skin-tango .jcarousel-item h2.entry-title{ font-size: 14px; background: #000; background: rgba(0, 0, 0, .8); position: absolute; bottom: 10px; display: block; text-align: center; margin-bottom: 0; padding:0; border-bottom: 0;}
+.jcarousel-skin-tango .jcarousel-item h2.entry-title a{ border-top: 1px solid #eb6767;  border-bottom: 1px solid #eb6767; color: #fff; margin-bottom: 0; padding:10px 0;}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal{
+	margin-left: 0;
+    margin-right: 40px;
+}
+.list_work2 .jcarousel-skin-tango .jcarousel-item-horizontal{ margin-right: 14px;}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: -55px;
+    right: 0px;
+    width: 25px;
+    height: 23px;
+    cursor: pointer;
+	z-index:9;
+	background: url(../images/wmnext.png) no-repeat center rgba(0,0,0,.8);
+    -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;
+}
+.jcarousel-skin-tango:hover .jcarousel-next-horizontal:hover{ opacity:.8;}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: -55px;
+    right: 28px;
+    width: 25px;
+    height: 23px;
+    cursor: pointer;
+	z-index:9;
+	background: url(../images/wmprev.png) no-repeat center rgba(0,0,0,.8);
+    -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;
+}
+.jcarousel-skin-tango:hover .jcarousel-prev-horizontal:hover{ opacity:.8;}

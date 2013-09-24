@@ -1,0 +1,246 @@
+    <div id="page_wrap" >
+        <div class="container_wrap" style="padding:10px; margin-top:20px; background:#dfdfdf;">
+            <div class="container">
+                <div class="content-wrapper">
+                    <div id="featured" class="featured3" style="height:400px;">
+                      <div class="bx-wrapper" style=" width:78%; height:300px;">
+                       
+                        <ul class="bxslider" style="">
+                          <% @featured_news.each do |fn| %>
+                            
+                          <li style="color:white; padding-bottom:40px; width:85%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.image(:medium), :style => "height:300px;")  %><span style="color:white; text-weight:bold; padding-left:40px; padding-top:15px; font-size:14px;"><%= fn.title %></span></li>
+                            
+                           
+                                              
+                          <% end %>
+                        </ul>
+
+
+                        
+                      </div><!--end-->
+                      <div id="bx-pager" class="featured-detail-left" style="">
+                        <% @featured_news.each do |fn| %>
+                          <a data-slide-index="0" href="#" style="height:48px;">
+                            <%= image_tag(fn.image(:thumb) , :style => "height:40px;")  %>
+                            <h5 style="color:#000;"><%= fn.title %><br><span><%=  truncate(fn.description) %></span></h5>
+                          </a>
+                          <% end %>
+                      </div> 
+                    </div><!--end:featured-->
+
+                    <center><a href="#">Visualizar todas as notícias destaques</a></center> 
+                    <br><br><hr>
+
+                    <div class="serv" style="padding:20px;">
+                      <h2 class="head-title2">Notícias <span>Secundárias</span> </h2>
+                       
+                       <% @secondary_news.each do |sn| %>
+                        <div class="one-fourth first" style="padding-left:15px; height:200px;">
+                            <%= image_tag(sn.image(:thumb)) %>
+                            <h3><%= sn.title %></h3>
+                            <p style="margin-top:-15px;"><%= truncate(sn.description, :length => 100) %></p>
+                            <span><a href="#">Ler notícia</a></span>
+                        </div>
+                        <% end %>
+                    </div><!--end secondary-->
+                     <center><%=  link_to "Visualizar todas as notícias secundárias", :controller => 'home', :action => 'noticiassecundarias' %></center> 
+                    <br><br><hr>
+                    <div class="latest-project">
+                      <h2 class="head-title2">Videos do <span>Partido</span></h2>
+                      <div class="grid-column-1">
+                        <div class="grid-1 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-2.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="grid-2 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-3.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div><!--end grid-column-1-->
+                      <div class="grid-column-2">
+                        <div class="grid-1 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-4.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="grid-2 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-1.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div><!--end grid-column-2-->
+                      <div class="grid-column-3">
+                        <div class="grid-1 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-5.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="grid-2 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-6.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div><!--end grid-column-2-->
+                      <div class="grid-column-4">
+                        <div class="grid-1 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-8.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="grid-2 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-10.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div><!--end grid-column-2-->
+                      <div class="grid-column-5">
+                        <div class="grid-1 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-7.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="grid-2 da-thumbs">
+                          <div class="post">
+                            <a href="#">
+                              <img src="images/portfolio/portfolio-9.jpg" alt="">
+                              <div>
+                                <span class="work-title">Awesome work</span>
+                                <span class="image-link-icon"></span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div><!--end grid-column-2-->
+                    </div><!--end latest-project-->
+                    <div class="whole">
+                      <div class="one-half first">
+                          <h2 style="margin-left:10%;">Artigos</h2>
+                      </div>
+                      <div class="one-half">
+                          <h2 class="head-title">Responsive Layout</h2>
+                          <ul class="listcheck">
+                              <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ede justo, fringilla. </a></li>
+                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean massa onsequat massa quis enim.</a></li>
+                              <li><a href="#">Nulla consequat massa quis enim.Donec pede justo, fringilla onsequa.</a></li>
+                              <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </a></li>
+                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean mass aquis enim </a></li>
+                              <li><a href="#">Nulla consequat massa quis enim.Donec pede justo, fringillat massa.</a></li>
+                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean mass aquis enim </a></li>
+                          </ul>
+                      </div>
+                    </div><!--end:whole-->
+                    <div class="whole">
+                      <h2 class="head-title2">Newly Design <span>Our Team</span> Structure</h2>
+                      <div class="one-half team2 first">
+                        <div class="team-sub">
+                          <a href="about.html"><img src="images/user-4.jpg" alt=""/></a>
+                          <h4><a href="about.html">Louie Jie Mahusay <br><span>Project Manager</span></a></h4>
+                          <span class="mail"><a href="#" class="tip" title="Mail"><img src="images/mail.png" alt=""></a></span>
+                        </div>
+                        <div class="team-sub2">
+                          <div class="detail-skill">
+                            <p>Quisque pellentesque mauris et tortor vestibulum.</p>
+                            <div class="meter reds">
+                              <h5>Wordpress <strong>78%</strong></h5>
+                              <span class="meter-wp"></span>
+                            </div>
+                            <div class="meter reds">
+                                <h5>HTML5/CSS3 <strong>90%</strong></h5>
+                                <span class="meter-htmlcss"></span>
+                            </div>
+                          </div><!--end:detail-skill-->
+                          <ul class="social2">
+                            <li><a href="#" class="tip facebook" title="Facebook"><img src="images/social-facebook.png" alt=""></a></li>
+                            <li><a href="#" class="tip twitter" title="Twitter"><img src="images/social-twitter.png" alt=""></a></li>
+                            <li><a href="#" class="tip skype" title="Skype"><img src="images/social-skype.png" alt=""></a></li>
+                            <li><a href="#" class="tip googleplus" title="Google+"><img src="images/social-googleplus.png" alt=""></a></li>
+                          </ul>
+                        </div><!--end:team-sub2-->
+                      </div><!--end:team2-->
+                      <div class="one-half team2">
+                        <div class="team-sub">
+                          <a href="about.html"><img src="images/user-5.jpg" alt=""></a>
+                          <h4><a href="about.html">Marry Grace Belarmino <br><span>System Analyst</span></a></h4>
+                          <span class="mail"><a href="#" class="tip" title="Mail"><img src="images/mail.png" alt=""></a></span>
+                        </div>
+                        <div class="team-sub2">
+                          <div class="detail-skill">
+                            <p>Quisque pellentesque mauris et tortor vestibulum.</p>
+                            <div class="meter reds">
+                                <h5>Photoshop Design <strong>87%</strong></h5>
+                                <span class="meter-psd"></span>
+                            </div>
+                            <div class="meter reds">
+                                <h5>Javascript <strong>65%</strong></h5>
+                                <span class="meter-js"></span>
+                            </div>
+                          </div><!--end:detail-skill-->
+                          <ul class="social2">
+                            <li><a href="#" class="tip facebook" title="Facebook"><img src="images/social-facebook.png" alt=""></a></li>
+                            <li><a href="#" class="tip twitter" title="Twitter"><img src="images/social-twitter.png" alt=""></a></li>
+                            <li><a href="#" class="tip skype" title="Skype"><img src="images/social-skype.png" alt=""></a></li>
+                            <li><a href="#" class="tip googleplus" title="Google+"><img src="images/social-googleplus.png" alt=""></a></li>
+                          </ul>
+                        </div><!--end:team-sub2-->
+                      </div><!--end:team2-->
+                    </div><!--end:whole-->
+                </div><!--end:content-wrapper-->
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->
