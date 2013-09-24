@@ -36,8 +36,9 @@ module Pdtms
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
-    # Precompile additional assets. Defaults to [application.js, application.css, non-JS/CSS]
-    config.assets.precompile += ['active_admin.css', 'active_admin/print.css', 'active_admin.js']
+    config.assets.initialize_on_precompile = false
+    config.assets.enabled = true
+   
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
