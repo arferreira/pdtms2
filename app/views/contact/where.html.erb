@@ -1,0 +1,87 @@
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<h2 class="h-title">Veja nossa Localização no mapa</h2>
+                    <div class="map-with-heading">
+                        <div id="basic_map" class="map"></div>	
+                    </div>
+                    <p>Ut vitae sapien nec sem lacinia euismod. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Ut vitae sapien nec sem lacinia euismod. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel.</p>
+                    <ul class="info-area">
+                    	<li class="location">Endereço do diretório, Campo Grande - Mato Grosso do Sul</li>
+                        <li class="tel">(67) 456-6567</li>
+                        <li class="email"><a href="mailto:redacao@pdtms.org.br">redacao@pdtms.org.br</a></li>
+                        <li class="skype">skype.username</li>
+                    </ul>
+                    <h2 class="h-title">Por favor envie-nos um contato por email</h2><br>
+                    <div id="form-message"></div>
+				        <form action="http://html5awesome.com/themeforest/disenio/style3/php/contact.php" method="post" id="contactform" class="contactform">
+				          <fieldset>
+				            <ol>
+				              <li>
+				                <label for="name" class="label-block">Seu Nome *</label>
+				                <input type="text" name="name" id="name">
+				              </li>
+				              <li>
+				                <label for="email" class="label-block">Seu Email *</label>
+				                <input type="text" name="email" id="email">
+				              </li>
+				              <li>
+				                <label for="website" class="label-block">Seu Site</label>
+				                <input type="text" name="website" id="website">
+				              </li>
+				              <li>
+				                <label for="subject" class="label-block">Assunto</label>
+				                <input type="text" name="subject" id="subject">
+				              </li>
+				              <li class="message-wrap">
+				                <label for="message" class="label-block">Sua Mensagem *</label>
+				                <!-- <textarea cols="20" rows="10" id="message" name="message"></textarea> -->
+				                <textarea id="message" name="message" cols="45" rows="8" aria-required="true"></textarea>
+				              </li>
+				            </ol>
+				          </fieldset>
+				          <input type="submit" class="submit" value="Enviar Mensagem">
+				        </form>
+            	</section>
+                <aside class="sidebar">
+                    <div class="side">
+                      <h3 class="head-title">Últimas noticias</h3>
+                      <ul class="latest-project">
+                        <li><a href="#"><img src="/images/work/work-thumb-1.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="/images/work/work-thumb-2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="/images/work/work-thumb-3.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="/images/work/work-thumb-4.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="/images/work/work-thumb-5.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="/images/work/work-thumb-6.jpg" alt=""></a></li>
+                      </ul>
+                    </div><!-- end side -->
+                    <div class="side">
+                      <h3 class="head-title">Categorias</h3>
+                        <ul id="nav">
+                        <li><a href="#">Notícias</a>
+                          <ul>
+                            <% @categories.each do |c| %>
+                            <li><%= link_to c.title %></li>
+                            <% end %>
+                          </ul>
+                        </li>
+                       
+                      </ul>
+                    </div><!-- end side -->
+                    <div class="side">
+                      <h3 class="head-title">Assine nossa newsletter</h3>
+                        <p>Increva-se agora mesmo e receba novidades do partido em seu email.</p>
+                        <form action="#" method="post" class="subscribe">
+                            <fieldset>
+                                <input type="text" name="email" class="email" value="Email" onBlur="if (this.value == ''){this.value = 'Email'; }" onFocus="if (this.value== 'Email') {this.value = ''; }" />
+                              <input type="submit" name="submit" value="Assinar" class="submit" />
+                          </fieldset>
+                        </form>
+                    </div><!-- end side -->
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->
+
+    <div style="width:100%; height:80px;"><hr></div>

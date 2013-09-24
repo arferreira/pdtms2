@@ -17,6 +17,46 @@ Pdtms::Application.routes.draw do
 
   get 'home/noticiassecundarias'
 
+  get 'flags/labour'
+
+  get 'flags/education'
+  
+  get 'flags/sovereignty'
+
+  get 'flags/humanrights'
+
+  get 'flags/foresight' 
+
+  get 'movements/black'
+
+  get 'movements/woman'
+
+  get 'movements/social'
+
+  get 'movements/union'
+
+  get 'movements/retired' 
+
+  get 'powers/executive'
+
+  get 'powers/legislative'
+
+  get 'agenda/events'
+
+  get 'contact/where'
+
+  get 'pdt/executive'
+
+  get 'pdt/history'
+
+  get 'pdt/leaders'
+
+  get 'pdt/municipal'
+
+  get 'pdt/state'
+
+ 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
