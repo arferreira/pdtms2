@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @newsses.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @newsses.description %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @newsses.content %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @newsses.author %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @newsses.date %>
+</p>
+<p>
+  <b>Date:</b>
+  <%= image_tag @newsses.imagenews_url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsses_path(@newsses) %> |
+<%= link_to 'Back', newsses_path %>

@@ -8,7 +8,7 @@
                         <ul class="bxslider" style="">
                           <% @featured_news.each do |fn| %>
                             
-                          <li style="color:white; padding-bottom:40px; width:85%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.image(:medium), :style => "height:300px;")  %><span style="color:white; text-weight:bold; padding-left:40px; padding-top:15px; font-size:14px;"><%= fn.title %></span></li>
+                          <li style="color:white; padding-bottom:40px; width:85%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:40px; bottom:0; position:absolute; font-size:14px;"><%= fn.title %></span></li>
                             
                            
                                               
@@ -21,28 +21,30 @@
                       <div id="bx-pager" class="featured-detail-left" style="">
                         <% @featured_news.each do |fn| %>
                           <a data-slide-index="0" href="#" style="height:48px;">
-                            <%= image_tag(fn.image(:thumb) , :style => "height:40px;")  %>
-                            <h5 style="color:#000;"><%= fn.title %><br><span><%=  truncate(fn.description) %></span></h5>
+                            <%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:40px;")  %>
+                            <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description) %></span></h5>
                           </a>
                           <% end %>
                       </div> 
                     </div><!--end:featured-->
 
                     <center><a href="#">Visualizar todas as notícias destaques</a></center> 
-                    <br><br><hr>
-
-                    <div class="serv" style="padding:20px;">
-                      <h2 class="head-title2">Notícias <span>Secundárias</span> </h2>
-                       
-                       <% @secondary_news.each do |sn| %>
-                        <div class="one-fourth first" style="padding-left:15px; height:200px;">
-                            <%= image_tag(sn.image(:thumb)) %>
-                            <h3><%= sn.title %></h3>
-                            <p style="margin-top:-15px;"><%= truncate(sn.description, :length => 100) %></p>
-                            <span><a href="#">Ler notícia</a></span>
+                    <hr>
+                    
+                      <div class="content-wrapper" style="background:none;">
+                        <div class="serv" style="padding-left:30px;">
+                        <% @secondary_news.each do |sn| %>
+                        <div class="one-fourth first">
+                            <%= image_tag sn.imagenews_url(:mini_thumb) %>
+                            <h3><%= truncate sn.title %></h3>
+                            <p style="min-height:80px; min-width:256px;"><%= sn.description %></p>
+                            <span><a href="#">Ler Noticia</a></span>
                         </div>
                         <% end %>
-                    </div><!--end secondary-->
+                    </div>
+                    </div>
+               
+                   
                      <center><%=  link_to "Visualizar todas as notícias secundárias", :controller => 'home', :action => 'noticiassecundarias' %></center> 
                     <br><br><hr>
                     <div class="latest-project">

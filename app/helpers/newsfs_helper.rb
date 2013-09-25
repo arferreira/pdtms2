@@ -1,0 +1,2 @@
+module NewsfsHelper
+end

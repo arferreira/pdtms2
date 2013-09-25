@@ -268,7 +268,7 @@ ul.pxs_thumbnails li.selected img{ opacity:1.0;}
 -----------------------------------------------------------------------------*/
 .serv{ margin-bottom:20px; float: left;}
 .serv h3{ font-weight:700; font-size:14px;}
-.serv img{ float:left; margin-right:20px; margin-bottom:0; padding:10px; background:#052d60; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;}
+.serv img{ float:left; margin-right:20px; margin-bottom:0; padding:10px; background:none; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;}
 .serv .one-fourth:hover img{ opacity: .8; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
 .serv span a{ padding:7px 10px; color:#fff; background:#052d60; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;}
 .serv span a:hover{ color:#fff !important; background:#141414;}

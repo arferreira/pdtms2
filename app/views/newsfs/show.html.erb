@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @newsf.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @newsf.description %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @newsf.content %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @newsf.author %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @newsf.date %>
+</p>
+<p>
+  <b>Image:</b>
+  <%= image_tag @newsf.imagenews_url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsf_path(@newsf) %> |
+<%= link_to 'Back', newsfs_path %>

@@ -1,0 +1,32 @@
+<h1>Listing newsfs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Content</th>
+    <th>Author</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @newsfs.each do |newsf| %>
+  <tr>
+    <td><%= newsf.title %></td>
+    <td><%= newsf.description %></td>
+    <td><%= newsf.content %></td>
+    <td><%= newsf.author %></td>
+    <td><%= newsf.date %></td>
+    <td><%= image_tag newsf.imagenews_url(:thumb) %></td>
+    <td><%= link_to 'Show', newsf %></td>
+    <td><%= link_to 'Edit', edit_newsf_path(newsf) %></td>
+    <td><%= link_to 'Destroy', newsf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Newsf', new_newsf_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923205150) do
+ActiveRecord::Schema.define(:version => 20130925183212) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -78,5 +78,27 @@ ActiveRecord::Schema.define(:version => 20130923205150) do
   end
 
   add_index "news_secondaries", ["newscategory_id_id"], :name => "index_news_secondaries_on_newscategory_id_id"
+
+  create_table "newsfs", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.text     "content"
+    t.string   "author"
+    t.date     "date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "imagenews"
+  end
+
+  create_table "newsses", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.text     "content"
+    t.string   "author"
+    t.date     "date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "imagenews"
+  end
 
 end

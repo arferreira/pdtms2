@@ -1,4 +1,10 @@
 Pdtms::Application.routes.draw do
+  resources :newsses
+
+
+  resources :newsfs
+
+
   resources :news_secondaries
 
 

@@ -13,13 +13,13 @@ class HomeController < ApplicationController
   # Método para trazer as noticias destaques
   def featured_news
 
-  @news_featured = NewsFeatured.find(:all, :limit => 4, :order => 'id desc')	
+  @news_featured = Newsf.find(:all, :limit => 4, :order => 'id desc')	
 
   end #final featured news
 
   def secondary_news
   	
-  	@news_featured = NewsSecondary.find(:all, :limit => 4, :order => 'id desc')
+  	@news_featured = Newss.find(:all, :limit => 4, :order => 'id desc')
 
   end
 
