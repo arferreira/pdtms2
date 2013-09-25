@@ -28,4 +28,16 @@ class HomeController < ApplicationController
 
     
   end
+
+  def newsfall
+
+    @news_featured = Newsf.paginate(:page => params[:page], :per_page => 1)
+    
+  end
+
+  def newssall
+
+    @news_secondary = Newss.paginate(:page => params[:page], :per_page => 1)
+    
+  end
 end

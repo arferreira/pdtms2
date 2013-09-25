@@ -34,6 +34,8 @@ gem 'capistrano'
 
 gem "paperclip", "~> 3.0" #upload das imagens
 
+gem 'will_paginate', '~> 3.0'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

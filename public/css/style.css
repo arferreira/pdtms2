@@ -739,6 +739,12 @@ blockquote.quote p{ background: url(../images/quote.png) no-repeat left top; pad
 #pagination li a.current{ background:#052d60; color:#fff; border:1px solid #052d60; }
 #pagination li a.current:hover{ color:#fff !important;}
 
+.pagination{ width:100%; float:left; margin-bottom:60px; }
+.pagination li{float: left; margin-right: 2px; list-style:none;}
+.previous_page disabled{ border:1px solid #ddd; float:left; padding:10px 20px; color:#5a5a5a; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px; border-radius: 2px;}
+.pagination li a.current{ background:#052d60; color:#fff; border:1px solid #052d60; }
+.pagination li a.current:hover{ color:#fff !important;}
+
 .page{ margin-left:0px;}
 
 ul.check{ width:100%; float:left; margin-bottom:0;}

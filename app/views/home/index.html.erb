@@ -28,7 +28,7 @@
                       </div> 
                     </div><!--end:featured-->
 
-                    <center><a href="#">Visualizar todas as notícias destaques</a></center> 
+                    <center><%= link_to  'Ver todos os destaques', :controller => 'home', :action => 'newsfall' %></center> 
                     <hr>
                     
                       <div class="content-wrapper" style="background:none;">
@@ -45,7 +45,7 @@
                     </div>
                
                    
-                     <center><%=  link_to "Visualizar todas as notícias secundárias", :controller => 'home', :action => 'noticiassecundarias' %></center> 
+                     <center><%=  link_to "Visualizar todas as notícias secundárias", :controller => 'home', :action => 'newssall' %></center> 
                     <br><br><hr>
                     <div class="latest-project">
                       <h2 class="head-title2">Videos do <span>Partido</span></h2>

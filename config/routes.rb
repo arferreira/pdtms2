@@ -61,6 +61,10 @@ Pdtms::Application.routes.draw do
 
   get 'pdt/state'
 
+  get 'home/newsfall'
+
+  get 'home/newssall'
+
  
 
   # The priority is based upon order of creation:

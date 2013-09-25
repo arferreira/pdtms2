@@ -1,0 +1,66 @@
+   <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<div id="blog-entry">
+
+                <!-- Inicio do loop de noticias --> 
+                <% @news_secondary.each do |sn| %>
+                        <article class="entry">
+                            <span class="post-img post"></span>
+                            <div class="blog-post da-thumbs">
+                            	<div class="post blog3">
+                                    <a href="single.html">
+                                        <%= image_tag sn.imagenews_url %>
+                                        <div>
+                                        	<span class="image-link-icon"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="blog-sub">
+                                    <h3><a href="single.html"><%= sn.title %></a></h3>
+                                    <div class="bread">
+                                    	<p>
+                                            <span><a href="#" class="admin"><%= sn.author %></a></span>
+                                            <span><a href="blog.html" class="date"><%= sn.date %></a></span>
+                                            <span><a href="#" class="cat">Noticias Secundárias</a></span>
+                                        </p>
+                                        <p class="bubble">
+                                            <a class="spch-bub-inside" href="single.html">
+                                                <span class="point"></span>  
+                                                <em></em>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <p><%= truncate sn.content, :lenght => '200' %> <a href="blog.html"> Ler noticia completa &raquo;</a></p>
+                                </div>
+                        	</div>
+                        </article>
+
+                        <% end %>
+                        <!-- Final do loop de noticias -->
+                        <%= will_paginate @news_secondary %>
+                    </div><!--end blog-entry-->
+                <ul id="pagination">
+                    <li><a href="#">Prev</a></li>
+                    <li><a class="current" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                	<li><a href="#">Next</a></li>
+                </ul>
+            	</section>
+                <aside class="sidebar">
+                    <div class="side">
+                      <h3 class="head-title">Últimas Noticias</h3>
+                      <ul class="latest-project">
+                        <% @news_secondary.each do |ns| %>
+                        <li><a href="#"><%= image_tag ns.imagenews_url(:mini_thumb) %></a></li>
+                        <% end %>
+                      </ul>
+                    </div><!-- end side -->
+
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->
