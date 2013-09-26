@@ -1,7 +1,7 @@
 	  <header>
       <div class="header_wrap">
         <div class="header_container">
-          <h1 class="logo"><a href=""></a></h1>
+          <h1 class="logo"><%= link_to '', root_path %></h1>
           <ul class="social social-right social-circle">
             <li><a href="https://www.facebook.com/pdtms?fref=ts" class="tip facebook" title="Facebook"><img src="/images/social-icon-facebook.png" alt="Facebook"></a></li>
             <li><a href="#" class="tip skype" title="Skype"><img src="/images/social-icon-skype.png" alt="Skype"></a></li>
@@ -21,9 +21,9 @@
                   <ul>
                     <li class="no-border"><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
                     <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
-                    <li><%= link_to 'Executiva', :controller => 'pdt', :action => 'executive' %></li>
+                    <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
                     <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
-                    <li><%= link_to 'Diretório Municipal', :controller => 'pdt', :action => 'municipal' %></li>
+                    <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
                   </ul>
                 </li>
                 <li><a href="#">Nossas Bandeiras</a>
@@ -40,14 +40,14 @@
                     <li class="no-border"><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
                     <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
                     <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
-                    <li><%= link_to 'Movimento Sindical', :controller => 'movements', :action => 'union' %></li>
-                    <li><%= link_to 'Movimento dos Aposentados', :controller => 'movements', :action => 'retired' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
                   </ul>
                 </li>
                 <li><a href="#">PDT nos Poderes</a>
                   <ul>
                     <li class="no-border"><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
-                    <li><%= link_to 'Legislativo', :controller => 'powers', :action => 'legislative' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
                   </ul>
                 </li>
                 

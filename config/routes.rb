@@ -65,6 +65,8 @@ Pdtms::Application.routes.draw do
 
   get 'home/newssall'
 
+  get 'home/shownoticesec'
+
  
 
   # The priority is based upon order of creation:

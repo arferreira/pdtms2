@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 
   def newsfall
 
-    @news_featured = Newsf.paginate(:page => params[:page], :per_page => 1)
+    @news_featured = Newsf.paginate(:page => params[:page], :per_page => 2)
     
   end
 
@@ -40,4 +40,16 @@ class HomeController < ApplicationController
     @news_secondary = Newss.paginate(:page => params[:page], :per_page => 1)
     
   end
+
+  def shownoticesec
+
+    @news_secondary = Newss.find(params[:id])
+
+    respond_to do |format|
+      format.html # shownoticesec.html.erb
+      format.json { render json: @news_secondary }
+    end
+
+  end # show news secundary individual
+
 end

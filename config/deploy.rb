@@ -3,7 +3,7 @@ require "rvm/capistrano"
 require 'capistrano-unicorn'
 
 
-set :application, '162.243.4.44'
+set :application, 'www.pdtms.org.br'
 
 set :keep_releases, 3
 

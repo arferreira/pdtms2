@@ -3,12 +3,12 @@
             <div class="container">
                 <div class="content-wrapper">
                     <div id="featured" class="featured3" style="height:400px;">
-                      <div class="bx-wrapper" style=" width:78%; height:300px;">
+                      <div class="bx-wrapper" style=" width:68%; height:300px; margin-left:60px; margin-top:20px;">
                        
                         <ul class="bxslider" style="">
                           <% @featured_news.each do |fn| %>
                             
-                          <li style="color:white; padding-bottom:40px; width:85%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:40px; bottom:0; position:absolute; font-size:14px;"><%= fn.title %></span></li>
+                          <li style="color:white; padding-bottom:40px; width:70%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:40px; bottom:0; position:absolute; font-size:14px;"><%= fn.title %></span></li>
                             
                            
                                               
@@ -38,7 +38,7 @@
                             <%= image_tag sn.imagenews_url(:mini_thumb) %>
                             <h3><%= truncate sn.title %></h3>
                             <p style="min-height:80px; min-width:256px;"><%= sn.description %></p>
-                            <span><a href="#">Ler Noticia</a></span>
+                            <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
                         </div>
                         <% end %>
                     </div>
