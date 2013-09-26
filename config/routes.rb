@@ -1,4 +1,7 @@
 Pdtms::Application.routes.draw do
+  resources :articles
+
+
   resources :newsses
 
 

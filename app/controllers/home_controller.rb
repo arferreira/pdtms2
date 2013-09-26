@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  
   def index
 
   	#listando as noticias destaque
@@ -8,6 +9,7 @@ class HomeController < ApplicationController
   	@secondary_news = secondary_news
   	#ok
 
+    @artigos = Article.all
   end
 
   # Método para trazer as noticias destaques
@@ -31,19 +33,20 @@ class HomeController < ApplicationController
 
   def newsfall
 
-    @news_featured = Newsf.paginate(:page => params[:page], :per_page => 2)
+    @news_featured = Newsf.page(params['page']).per(2) #Newsf.paginate(:page => params[:page], :per_page => 2)
     
   end
 
   def newssall
 
-    @news_secondary = Newss.paginate(:page => params[:page], :per_page => 1)
+    @news_secondary = Newss.page(params['page']).per(2) #Newss.paginate(:page => params[:page], :per_page => 1)
     
   end
 
-  def shownoticesec
+  def shownoticesec 
 
     @news_secondary = Newss.find(params[:id])
+    @news_featured = Newsf.find(:all, :limit => 6, :order => 'id desc') 
 
     respond_to do |format|
       format.html # shownoticesec.html.erb

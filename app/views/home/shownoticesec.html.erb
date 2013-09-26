@@ -5,13 +5,13 @@
                 	<div id="blog-entry">
                     	<article class="entry">
                     	<div class="blog-post">
-                        	<img src="images/blog/blog.jpg" alt="" />
-                            <h3><a href="single.html">@news_secondary.title</a></h3>
+                        	<%= image_tag @news_secondary.imagenews_url(:banner_thumb) %>
+                            <h3><a href="single.html"><%= @news_secondary.title %></a></h3>
                             <div class="bread">
                             	<p>
-                                    <span><a href="#" class="admin">Admin</a></span>
-                                    <span><a href="blog.html" class="date">April 30, 2013</a></span>
-                                    <span><a href="#" class="cat">Web Design</a></span>
+                                    <span><a href="#" class="admin"><%= @news_secondary.author %></a></span>
+                                    <span><a href="blog.html" class="date"><%= @news_secondary.date%></a></span>
+                                    <span><a href="#" class="cat">Notícias Secundárias</a></span>
                                 </p>
                                 <p class="bubble">
                                     <a class="spch-bub-inside" href="single.html">
@@ -20,288 +20,39 @@
                                     </a>
                                 </p>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p><br>
-                            <div class="one-half first">	
-                                <ul class="check">
-                                    <li>Aliquam vel nisi enim, in feugiat ligula</li>
-                                    <li>Pellentesque facilisis turpis ac nibh vehicula</li>
-                                    <li>Integer pharetra arcu eget eros porttitor</li>
-                                </ul>
-                            </div>
-                            <div class="one-half">	
-                                <ul class="check">
-                                    <li>Aliquam vel nisi enim, in feugiat ligula</li>
-                                    <li>Pellentesque facilisis turpis ac nibh vehicula</li>
-                                    <li>Integer pharetra arcu eget eros porttitor</li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis, sapien commodo condimentum facilisis, tortor mi scelerisque lorem, non ornare sem est nec enim. Donec tempus nisi eu justo rutrum tempor. Aliquam erat volutpat. Mauris eget urna in justo tempus malesuada. Proin imperdiet imperdiet faucibus. Morbi in ante et massa cursus rhoncus quis et turpis. Sed quis libero felis. Pellentesque luctus sagittis est eget eleifend. Morbi eget diam id nisi tristique viverra et in arcu. Vestibulum quis dui eros, et varius velit. Donec eget mauris massa. Nullam eleifend, metus vitae vestibulum accumsan, augue nunc rutrum turpis, non semper libero augue ac erat. Phasellus pulvinar, odio a mattis cursus, erat augue cursus erat, vel tempor lorem ligula sed ligula. Vivamus auctor lacus ac erat imperdiet et commodo arcu condimentum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis, sapien commodo condimentum facilisis, tortor mi scelerisque lorem, non ornare sem est nec enim. Donec tempus nisi eu justo rutrum tempor. Aliquam erat volutpat. Mauris eget urna in justo tempus malesuada. Proin imperdiet imperdiet faucibus. Morbi in ante et massa cursus rhoncus quis et turpis. Sed quis libero felis. Pellentesque luctus sagittis est eget eleifend. Morbi eget diam id nisi tristique viverra et in arcu. Vestibulum quis dui eros, et varius velit. Donec eget mauris massa. Nullam eleifend, metus vitae vestibulum accumsan, augue nunc rutrum turpis, non semper libero augue ac erat. Phasellus pulvinar, odio a mattis cursus, erat augue cursus erat, vel tempor lorem ligula sed ligula. Vivamus auctor lacus ac erat imperdiet et commodo arcu condimentum.</p>
+                            <p style="min-height:132px;"><%= @news_secondary.description%></p><br>
+                           <hr>
+                            <p><%= @news_secondary.content%></p>
                         </div>
                         </article>
-                        <h3 class="h-title">Related Post</h3>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
                         <div class="related-post">
                             <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
                             	<li>
                                 	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
-                                        <img src="images/work/work-2.jpg" alt="" />
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
                                         <div><span class="image-link-icon"></span></div>
                                     </a>
-                                    <h3><a href="blog.html">Related Blog POst</a></h3>
+                                    <h3><a href="blog.html"><%= fs.title %></a></h3>
                                 </li>
-                                <li>
-                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
-                                        <img src="images/work/work-3.jpg" alt="" />
-                                        <div><span class="image-link-icon"></span></div>
-                                    </a>
-                                    <h3><a href="blog.html">Related Blog Post</a></h3>
-                                </li>
-                                <li>
-                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
-                                        <img src="images/work/work-4.jpg" alt="" />
-                                        <div><span class="image-link-icon"></span></div>
-                                    </a>
-                                    <h3><a href="blog.html">Related Blog Post</a></h3>
-                                </li>
+                                <% end %>
                             </ul>
                         </div>
-                        <div class="author">
-                            <h3 class="h-title">About Author</h3>
-                            <img src="images/author.jpg" alt="">
-                            <h4>Louie Jie Mahusay <br><span>Web Designer, A Blogger, CEO</span></h4>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus enim ipsum, pretium eu tristique quis, sagittis at arcu. Maecenas arcu felis, tempor sit amet dignissim sit amet, facilisis vitae ante.</p>
-                        </div><!--end author-->
-                        <div class="feedback-wrap">
-                        <h3 class="h-title">4 Comment &mdash; <span><a href="#">Single Blog Post</a></span></h3>
-                        <div class="dvision">
-                            <div class="feedback">
-                            <img src="images/user-1.jpg" alt="">
-                            <div>
-                                <h4><a href="#">Louie Jie Mahusay</a></h4>
-                                <span><a href="#">May 2, 2013 at 04:38 pm</a></span>
-                                <p>Mauris vestibulum elementum condimentum. Donec eget turpis eget arcu aliquam fermentum. Donec tincidunt ipsum et nisl laoreet id mattis ante mollis.</p>
-                                <span class="reply"><a href="#">Reply</a></span>
-                            </div>
-                         </div>
-                         <div class="feedback feed2">
-                            <img src="images/user-2.jpg" alt="">
-                            <div>
-                                <h4><a href="#">Divine Grace Mahusay</a></h4>
-                                <span><a href="#">May 3, 2013 at 10:10 am</a></span>
-                                <p>Mauris vestibulum elementum condimentum. Donec eget turpis eget arcu aliquam fermentum. Donec tincidunt ipsum et nisl laoreet id mattis ante mollis.</p>
-                                <span class="reply"><a href="#">Reply</a></span>
-                            </div>
-                         </div>
-                         <div class="feedback feed3">
-                            <img src="images/user-3.jpg" alt="">
-                            <div>
-                                <h4><a href="#">Marry Grace Belarmino</a></h4>
-                                <span><a href="#">May 3, 2013 at 10:38 am</a></span>
-                                <p>Mauris vestibulum elementum condimentum. Donec eget turpis eget arcu aliquam fermentum. Donec tincidunt ipsum et nisl laoreet id mattis ante mollis.</p>
-                                <span class="reply"><a href="#">Reply</a></span>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="dvision">
-                      <div class="feedback">
-                          <img src="images/user-1.jpg" alt="">
-                          <div>
-                              <h4><a href="#">Louie Jie Mahusay</a></h4>
-                              <span><a href="#">May 4, 2013 at 10:38 am</a></span>
-                              <p>Mauris vestibulum elementum condimentum. Donec eget turpis eget arcu aliquam fermentum. Donec tincidunt ipsum et nisl laoreet id mattis ante mollis.</p>
-                              <span class="reply"><a href="#">Reply</a></span>
-                        </div>
-                      </div>
-                      </div>
-                   </div><!--end:feedback-wrap-->
-                   <div class="commentf">
-                    <h3>Leave a comment</h3>
-                    <form id="commentform" action="#" method="post">
-                    <fieldset>
-                    <input type="text" name="name" id="name" size="30" value="" class="input" />
-                    <label>Name (required)</label>
-                    <br/>
-                    <input type="text" name="mail" id="mail" size="30" value="" class="input" />
-                    <label>Mail (will not be published) (required)</label>
-                    <br/>
-                    <textarea cols="25" rows="5" name="message" id="message" class="textarea">Message</textarea>
-                    <br/>
-                    <input type="submit" name="submit" class="button"  value="Submit"/>
-                    </fieldset>
-                    </form>
-                   </div><!--end:comment-->
-                </div><!--end blog-entry-->
+
+
             	</section>
                 <aside class="sidebar">
                     <div class="side">
-                      <h3 class="head-title">Latest Work</h3>
+                      <h3 class="head-title">Últimas noticias</h3>
                       <ul class="latest-project">
-                        <li><a href="#"><img src="images/work/work-thumb-1.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="images/work/work-thumb-2.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="images/work/work-thumb-3.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="images/work/work-thumb-4.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="images/work/work-thumb-5.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="images/work/work-thumb-6.jpg" alt=""></a></li>
+                        <% @news_featured.each do |nf| %>
+                        <li><a href="#"><%= image_tag nf.imagenews_url(:mini_thumb)%></li>
+                        <% end %>
                       </ul>
                     </div><!-- end side -->
-                    <div class="side">
-                      <h3 class="head-title">Categories Widget</h3>
-                        <ul id="nav">
-                        <li><a href="#">Animation</a>
-                          <ul>
-                            <li><a href="#">Cartoons</a></li>
-                            <li><a href="#">Comic Strips</a></li>
-                            <li><a href="#">Video Clips</a></li>
-                            <li><a href="#">Web GIFs</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Graphic Design</a>
-                          <ul>
-                            <li><a href="#">Adobe Photoshop</a></li>
-                            <li><a href="#">Branding &amp; Logos</a></li>
-                            <li><a href="#">Digital Marketing</a></li>
-                            <li><a href="#">Illustrations</a></li>
-                            <li><a href="#">Infographics</a></li>
-                            <li><a href="#">Product Design</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Digital Photography</a>
-                          <ul>
-                            <li><a href="#">Cityscapes</a></li>
-                            <li><a href="#">Oceans</a></li>
-                            <li><a href="#">Wide-Angle Lens</a></li>
-                            <li><a href="#">Wildlife</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Print &amp; Identity</a>
-                          <ul>
-                            <li><a href="#">Branding</a></li>
-                            <li><a href="#">Business Cards</a></li>
-                            <li><a href="#">Letterpress</a></li>
-                            <li><a href="#">Poster Art</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Programming</a>
-                          <ul>
-                            <li><a href="#">CSS3</a></li>
-                            <li><a href="#">HTML5</a></li>
-                            <li><a href="#">JavaScript &amp; jQuery</a></li>
-                            <li><a href="#">MySQL Databases</a></li>
-                            <li><a href="#">Wordpress CMS</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Web Design</a>
-                          <ul>
-                            <li><a href="#">Icons</a></li>
-                            <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">User Interfaces</a></li>
-                            <li><a href="#">Website Layouts</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div><!-- end side -->
-                    <div class="side">
-                      <h3 class="head-title">Tab Widget</h3>
-                      <div id="tab">
-                          <ul class="nav">
-                            <li class="nav-one"><a href="#recent" class="current">Recent</a></li>
-                            <li class="nav-two"><a href="#popular">Popular</a></li>
-                          </ul>
-                          <div class="list-wrap">
-                            <div id="recent" class="blog">
-                                <div class="third">
-                                    <img src="images/blog/thumb-1.jpg" alt="" />
-                                    <small><a href="blog.html">August 20, 2013</a></small>
-                                    <span><a href="#">Sample Blog Post</a></span><br>
-                                </div>
-                                <div class="third">
-                                    <img src="images/blog/thumb-2.jpg" alt="" />
-                                    <small><a href="blog.html">August 18, 2013</a></small>
-                                    <span><a href="#">Sample Blog Post</a></span><br>
-                                </div>
-                            </div>
-                            <div id="popular" class="hide blog">          
-                                <div class="third">
-                                    <img src="images/blog/thumb-1.jpg" alt="" />
-                                    <small><a href="blog.html">August 16, 2013</a></small>
-                                    <span><a href="#">Sample Blog Post</a></span><br>
-                                </div>
-                                <div class="third">
-                                    <img src="images/blog/thumb-2.jpg" alt="" />
-                                    <small><a href="blog.html">August 15, 2013</a></small>
-                                    <span><a href="#">Sample Blog Post</a></span><br>
-                                </div>
-                            </div>
-                          </div>
-                        </div><!--end:tab-->
-                    </div><!--end side-->
-                    <div class="side">
-                      <h3 class="head-title">Tags Widget</h3>
-                      <ul class="tags">
-                          <li><a href="#">Inspirational</a></li>
-                            <li><a href="#">3D Animation</a></li>
-                            <li><a href="#">Flexslider</a></li>
-                            <li><a href="#">Camera Slider</a></li>
-                            <li><a href="#">Clean</a></li>
-                            <li><a href="#">Minimal</a></li>
-                            <li><a href="#">Premium</a></li>
-                            <li><a href="#">One Page</a></li>
-                            <li><a href="#">Slick</a></li>
-                            <li><a href="#">HTML5/CSS3</a></li>
-                        </ul>
-                    </div><!--end side-->
-                    <div class="side">
-                      <h3 class="head-title">Newsletter</h3>
-                        <p>Suspendisse rhoncus facilisis adipiscing. Vestibulum eu ligula lorem. Vivamus orci sem, consectetur ut vestibulum.</p>
-                        <form action="#" method="post" class="subscribe">
-                            <fieldset>
-                                <input type="text" name="email" class="email" value="Email Adress" onBlur="if (this.value == ''){this.value = 'Email Adress'; }" onFocus="if (this.value== 'Email Adress') {this.value = ''; }" />
-                              <input type="submit" name="submit" value="Subscribe" class="submit" />
-                          </fieldset>
-                        </form>
-                    </div><!-- end side -->
-                    <div class="side quotes-content">
-                      <h3 class="head-title">Client Says</h3>
-                      <div class="quotes">
-                        <ul>
-                          <li>
-                            <blockquote>
-                              <p>“That which can be asserted without evidence, can be dismissed without evidence.”</p>
-                              <span class="point"></span>  
-                            </blockquote>
-                            <img src="images/user-1.jpg" alt="">
-                            <p class="client">&mdash; Louie Jie Mahusay</p>
-                          </li>
-
-                          <li>
-                            <blockquote>
-                              <p>“That which can be asserted without evidence, can be dismissed without evidence.”</p>
-                              <span class="point"></span>  
-                            </blockquote>
-                            <img src="images/user-1.jpg" alt="">
-                            <p>&mdash; Marry Grace Belarmino</p>
-                          </li>
-
-                          <li>
-                            <blockquote>
-                              <p>“That which can be asserted without evidence, can be dismissed without evidence.”</p>
-                              <span class="point"></span>  
-                            </blockquote>
-                            <img src="images/user-3.jpg" alt="">
-                            <p>&mdash; Divine Mahusay</p>
-                          </li>
-
-                          <li>
-                            <blockquote>
-                              <p>“That which can be asserted without evidence, can be dismissed without evidence.”</p>
-                              <span class="point"></span>  
-                            </blockquote>
-                            <img src="images/user-2.jpg" alt="">
-                            <p>&mdash; John Doe</p>
-                          </li>
-                        </ul>
-                      </div><!-- .quotes -->
-                    </div><!--end side-->
+                 
               </aside>
             </div><!--end:container-->
         </div><!--end:container_wrap-->
