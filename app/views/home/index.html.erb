@@ -8,7 +8,7 @@
                         <ul class="bxslider" style="">
                           <% @featured_news.each do |fn| %>
                             
-                          <li style="color:white; padding-bottom:40px; width:70%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:40px; bottom:0; position:absolute; font-size:14px;"><%= fn.title %></span></li>
+                          <li style="color:white; padding-bottom:40px; width:70%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:30px; margin-top:10px; position:absolute; font-size:14px;"><%= link_to fn.title, {:controller =>  'home', :action => 'shownoticedef', :id => fn.id} , :style => 'color:white;'  %></span></li>
                             
                            
                                               
@@ -30,14 +30,15 @@
 
                     <center><%= link_to  'Ver todos os destaques', :controller => 'home', :action => 'newsfall' %></center> 
                     <hr>
-                    
+                    <center><h2>Noticias Secundárias</h2></center>
+                    <br>
                       <div class="content-wrapper" style="background:none;">
                         <div class="serv" style="padding-left:30px;">
                         <% @secondary_news.each do |sn| %>
                         <div class="one-fourth first">
                             <%= image_tag sn.imagenews_url(:mini_thumb) %>
                             <h3><%= truncate sn.title %></h3>
-                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, :lenght => '150') %></p>
+                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, :lenght => '350') %></p>
                             <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
                         </div>
                         <% end %>
@@ -79,7 +80,7 @@
                           <ul class="listcheck">
 
                             <% @artigos.each do |a| %>
-                            <li><%= link_to a.title, :controller => 'home', :action => 'index'  %></li>
+                            <li><%= link_to a.title, :controller => 'home', :action => 'readarticle', :id => a.id  %></li>
                             <% end %>
                           </ul>
                       </div>

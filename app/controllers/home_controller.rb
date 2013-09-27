@@ -1,6 +1,7 @@
 #encoding: utf-8
 class HomeController < ApplicationController
    helper_method :survey, :participant
+  
   def index
 
   	#listando as noticias destaque
@@ -10,7 +11,7 @@ class HomeController < ApplicationController
   	@secondary_news = secondary_news
   	#ok
 
-    @artigos = Article.all
+    @artigos = Article.find(:all, :limit => 8, :order => 'id desc') 
 
     @moves = feedmoves
 
@@ -87,6 +88,30 @@ class HomeController < ApplicationController
   def shownoticesec 
 
     @news_secondary = Newss.find(params[:id])
+    @news_featured = Newsf.find(:all, :limit => 6, :order => 'id desc') 
+
+    respond_to do |format|
+      format.html # shownoticesec.html.erb
+      format.json { render json: @news_secondary }
+    end
+
+  end # show news secundary individual
+
+    def shownoticedef 
+
+    @news_secondary = Newsf.find(params[:id])
+    @news_featured = Newsf.find(:all, :limit => 6, :order => 'id desc') 
+
+    respond_to do |format|
+      format.html # shownoticesec.html.erb
+      format.json { render json: @news_secondary }
+    end
+
+  end # show news secundary individual
+
+  def readarticle 
+
+    @news_secondary = Article.find(params[:id])
     @news_featured = Newsf.find(:all, :limit => 6, :order => 'id desc') 
 
     respond_to do |format|

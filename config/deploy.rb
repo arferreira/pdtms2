@@ -90,6 +90,26 @@ namespace :ruby do
   end
 end
 
+namespace :production do
+
+desc "show log production"
+
+task :log, :except => { :no_release => true } do
+
+  run "cat #{deploy_to}/#{shared_dir}/log/production.log "
+
+  end
+end
+namespace :rake_routes do
+desc "Run the super-awesome rake task"
+task :executa do
+  rake = fetch(:rake, 'rake')
+  rails_env = fetch(:rails_env, 'production')
+
+  run "cd '#{current_path}' && #{rake} routes RAILS_ENV=#{rails_env}"
+end
+end
+
 namespace :unicorn do
   desc "Show error log"
   task :error_log, :except => { :no_release => true } do

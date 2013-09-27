@@ -1,0 +1,2 @@
+module DireitoshumanosHelper
+end

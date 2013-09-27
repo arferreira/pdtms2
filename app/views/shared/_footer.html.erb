@@ -2,16 +2,12 @@
     	<div class="footer_wrap">
           <div class="footer-container">
             <div class="one-fourth first">
-              <h3>Artigos <span>Data</span></h3>
+              <h3>Últimos <span>Artigos</span></h3>
+              <% @artigos = Article.find(:all, :limit => 8, :order => 'id desc')   %>
               <ul class="archives">
-                <li><a href="#">May 2013 (100)</a></li>
-                <li><a href="#">April 2013 (120)</a></li>
-                <li><a href="#">March 2013 (152)</a></li>
-                <li><a href="#">February 2013 (100)</a></li>
-                <li><a href="#">January 2013 (117)</a></li>
-                <li><a href="#">December 2012 (200)</a></li>
-                <li><a href="#">November 2012 (180)</a></li>
-                <li><a href="#">October 2012 (145)</a></li>
+                          <% @artigos.each do |a| %>
+                            <li><%= link_to a.title, :controller => 'home', :action => 'index'  %></li>
+                           <% end %>
               </ul>
             </div>
             <div class="one-fourth">

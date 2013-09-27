@@ -1,0 +1,23 @@
+<h1>Listing previdenciasocials</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @previdenciasocials.each do |previdenciasocial| %>
+  <tr>
+    <td><%= previdenciasocial.content %></td>
+    <td><%= link_to 'Show', previdenciasocial %></td>
+    <td><%= link_to 'Edit', edit_previdenciasocial_path(previdenciasocial) %></td>
+    <td><%= link_to 'Destroy', previdenciasocial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Previdenciasocial', new_previdenciasocial_path %>

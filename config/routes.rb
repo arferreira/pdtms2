@@ -1,4 +1,37 @@
 Pdtms::Application.routes.draw do
+  resources :previdenciasocials
+
+
+  resources :direitoshumanos
+
+
+  resources :soberania
+
+
+  resources :educacaos
+
+
+  resources :trabalhismos
+
+
+  resources :diretoriomunicipals
+
+
+  resources :diretorioestaduals
+
+
+  resources :executivas
+
+
+  resources :lideres
+
+
+  resources :historia
+
+
+  resources :events
+
+
   resources :moves
 
 
@@ -72,6 +105,10 @@ Pdtms::Application.routes.draw do
   get 'home/newssall'
 
   get 'home/shownoticesec'
+
+  get 'home/shownoticedef'
+
+  get 'home/readarticle'
 
   match "contact", to: "contact#where", as: "contact"
   match "dispatch_email", to: "contact#dispatch_email", as: "dispatch_email", method: :post

@@ -1,0 +1,23 @@
+<h1>Listing trabalhismos</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trabalhismos.each do |trabalhismo| %>
+  <tr>
+    <td><%= trabalhismo.content %></td>
+    <td><%= link_to 'Show', trabalhismo %></td>
+    <td><%= link_to 'Edit', edit_trabalhismo_path(trabalhismo) %></td>
+    <td><%= link_to 'Destroy', trabalhismo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trabalhismo', new_trabalhismo_path %>

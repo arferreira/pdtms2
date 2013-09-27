@@ -1,0 +1,23 @@
+<h1>Listing direitoshumanos</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @direitoshumanos.each do |direitoshumano| %>
+  <tr>
+    <td><%= direitoshumano.content %></td>
+    <td><%= link_to 'Show', direitoshumano %></td>
+    <td><%= link_to 'Edit', edit_direitoshumano_path(direitoshumano) %></td>
+    <td><%= link_to 'Destroy', direitoshumano, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Direitoshumano', new_direitoshumano_path %>

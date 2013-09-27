@@ -32,7 +32,7 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <p><%= truncate sn.content, :lenght => '200' %> <a href="blog.html"> Ler noticia completa &raquo;</a></p>
+                                    <p><%= truncate sn.content, :lenght => '200' %> <%= link_to 'Ler Notícia completa', :controller => 'home', :action => 'shownoticedef', :id => sn.id %></p>
                                 </div>
                             </div>
                         </article>

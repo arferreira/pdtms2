@@ -1,0 +1,68 @@
+    <meta property="fb:app_id" content="181954861992689" />
+    <meta property="og:type"   content="partidodemocraticot:news" />
+    <meta property="og:url"    content="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" />
+    <meta property="og:title"  content="<%= @news_secondary.title %>" />
+    <meta property="og:description"   content="<%= @news_secondary.description %>" />
+    <meta property="og:image"  content="<%= "image_tag imagenews_url(:thumb)" %>" />
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<div id="blog-entry">
+                    	<article class="entry">
+                    	<div class="blog-post">
+                        	<%= image_tag @news_secondary.imagearticle_url(:banner_thumb) %>
+                            <h3><a href="single.html"><%= @news_secondary.title %></a></h3>
+                            <div class="bread">
+                            	<p>
+                                    <span><a href="#" class="admin"><%= @news_secondary.author %></a></span>
+                                    <span><a href="blog.html" class="date"><%= @news_secondary.date%></a></span>
+                                    <span><a href="#" class="cat">Notícias Secundárias</a></span>
+                                </p>
+                                <p class="bubble">
+                                    <a class="spch-bub-inside" href="single.html">
+                                        <span class="point"></span>  
+                                        <em><%= @news_secondary.id %></em>
+                                    </a>
+                                </p>
+                            </div>
+                            <p style="min-height:132px;"><%= @news_secondary.description%></p><br>
+                           <hr>
+                            <p><%= @news_secondary.content%></p>
+                            <hr>
+                            <% url = "#{request.fullpath}" %>
+                          <%= render_shareable :url=> 'http://www.pdtms.org.br/', :facebook=> {:send=> 'true', :url=> 'http://www.pdtms.org.br/'} %>
+                        </div>
+                        </article>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                            	<li>
+                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><a href="blog.html"><%= fs.title %></a></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+            	</section>
+                <aside class="sidebar">
+                    <div class="side">
+                      <h3 class="head-title">Últimas noticias</h3>
+                      <ul class="latest-project">
+                        <% @news_featured.each do |nf| %>
+                        <li><a href="#"><%= image_tag nf.imagenews_url(:mini_thumb)%></li>
+                        <% end %>
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->

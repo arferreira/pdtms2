@@ -26,13 +26,13 @@
                                             <span><a href="#" class="cat">Noticias Secundárias</a></span>
                                         </p>
                                         <p class="bubble">
-                                            <a class="spch-bub-inside" href="single.html">
+                                            <a class="spch-bub-inside" href="#">
                                                 <span class="point"></span>  
                                                 <em></em>
                                             </a>
                                         </p>
                                     </div>
-                                    <p><%= truncate sn.content, :lenght => '200' %> <a href="blog.html"> Ler noticia completa &raquo;</a></p>
+                                    <p><%= truncate sn.content, :lenght => '200' %> <%= link_to 'Ler Notícia completa', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></p>
                                 </div>
                         	</div>
                         </article>

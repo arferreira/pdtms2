@@ -50,6 +50,10 @@ gem 'fastercsv'
 
 gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

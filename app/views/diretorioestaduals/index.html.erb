@@ -1,0 +1,23 @@
+<h1>Listing diretorioestaduals</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @diretorioestaduals.each do |diretorioestadual| %>
+  <tr>
+    <td><%= diretorioestadual.content %></td>
+    <td><%= link_to 'Show', diretorioestadual %></td>
+    <td><%= link_to 'Edit', edit_diretorioestadual_path(diretorioestadual) %></td>
+    <td><%= link_to 'Destroy', diretorioestadual, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diretorioestadual', new_diretorioestadual_path %>

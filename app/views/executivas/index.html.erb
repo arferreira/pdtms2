@@ -1,0 +1,23 @@
+<h1>Listing executivas</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @executivas.each do |executiva| %>
+  <tr>
+    <td><%= executiva.content %></td>
+    <td><%= link_to 'Show', executiva %></td>
+    <td><%= link_to 'Edit', edit_executiva_path(executiva) %></td>
+    <td><%= link_to 'Destroy', executiva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Executiva', new_executiva_path %>

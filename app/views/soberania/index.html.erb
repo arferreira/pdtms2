@@ -1,0 +1,23 @@
+<h1>Listing soberania</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @soberania.each do |soberanium| %>
+  <tr>
+    <td><%= soberanium.content %></td>
+    <td><%= link_to 'Show', soberanium %></td>
+    <td><%= link_to 'Edit', edit_soberanium_path(soberanium) %></td>
+    <td><%= link_to 'Destroy', soberanium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Soberanium', new_soberanium_path %>

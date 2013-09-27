@@ -1,0 +1,25 @@
+<%= form_for(@historium) do |f| %>
+  <% if @historium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@historium.errors.count, "error") %> prohibited this historium from being saved:</h2>
+
+      <ul>
+      <% @historium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
