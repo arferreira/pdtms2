@@ -12,7 +12,7 @@ Pdtms::Application.configure do
   config.serve_static_assets = true
 
 
-  config.action_controller.asset_host = true
+  
  
 
   # Defaults to nil and saved in location specified by config.assets.prefix
