@@ -11,6 +11,8 @@ Pdtms::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = true
 
+
+  config.action_controller.asset_host = true
  
 
   # Defaults to nil and saved in location specified by config.assets.prefix
