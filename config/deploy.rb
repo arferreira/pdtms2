@@ -5,7 +5,7 @@ require 'capistrano-unicorn'
 
 set :application, 'www.pdtms.org.br'
 
-set :keep_releases, 3
+set :keep_releases, 2
 
 set :scm, :git
 
