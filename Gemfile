@@ -12,6 +12,8 @@ gem 'mysql2'
 
 gem "kaminari"
 
+gem 'social-share-button'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -36,7 +38,17 @@ gem "paperclip", "~> 3.0" #upload das imagens
 
 # gem 'will_paginate', '3.0.pre4'
 
+gem 'shareable'
 
+#gem "surveyor"
+
+gem 'formtastic', '~> 2.1.0'
+
+gem 'haml'
+
+gem 'fastercsv'
+
+gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 
 group :development do
   gem "better_errors"

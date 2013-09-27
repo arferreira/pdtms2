@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  surveys: "Enquete"
+  articles: "Artigos"
+  moves: "videos"
+  categories: "Categorias"
+  newsses: "Noticias Secundarias"
+  newsfs: "Noticias Principais"
+  news_categories: "Categorias"
+  admin_users: "Usuários"
+

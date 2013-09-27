@@ -47,129 +47,32 @@
                    
                      <center><%=  link_to "Visualizar todas as notícias secundárias", :controller => 'home', :action => 'newssall' %></center> 
                     <br><br><hr>
-                    <div class="latest-project">
-                      <h2 class="head-title2">Videos do <span>Partido</span></h2>
-                      <div class="grid-column-1">
-                        <div class="grid-1 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-2.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="grid-2 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-3.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div><!--end grid-column-1-->
-                      <div class="grid-column-2">
-                        <div class="grid-1 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-4.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="grid-2 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-1.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div><!--end grid-column-2-->
-                      <div class="grid-column-3">
-                        <div class="grid-1 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-5.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="grid-2 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-6.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div><!--end grid-column-2-->
-                      <div class="grid-column-4">
-                        <div class="grid-1 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-8.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="grid-2 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-10.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div><!--end grid-column-2-->
-                      <div class="grid-column-5">
-                        <div class="grid-1 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-7.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="grid-2 da-thumbs">
-                          <div class="post">
-                            <a href="#">
-                              <img src="images/portfolio/portfolio-9.jpg" alt="">
-                              <div>
-                                <span class="work-title">Awesome work</span>
-                                <span class="image-link-icon"></span>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div><!--end grid-column-2-->
-                    </div><!--end latest-project-->
+
+                    <!-- Carregando feed de videos do partido -->
+
+                    <div class="list_work">
+                    <h2>Últimos Videos do PDT</h2>
+                        <ul id="mycarousel" class="jcarousel-skin-tango item da-thumbs">
+                          <% @moves.each do |move| %>
+                          <!-- Feed of moves -->
+                            <li>
+                                <a href="images/preview/work_1_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                    <iframe width="245" height="235" src="<%= move.link %>" frameborder="0" allowfullscreen></iframe>
+                                    <div>
+                                        <h2>The Meeting Place</h2>
+                                        <span class="image-hover-icon"></span>
+                                        <small>Illustration, Web Design</small>
+                                    </div>
+                                </a>
+                                <h2 class="entry-title"><a href="#">The Meeting Place</a></h2>
+                            </li>
+                            <% end %>
+                            <!--End moves-->
+                        </ul>
+                    </div><!--end:list_work-->
+
+                    <!--Fechando feed de videos-->
+
                     <div class="whole">
                       <div class="one-half first">
                           <h2 style="margin-left:10%;">Artigos</h2>
@@ -181,73 +84,55 @@
                           </ul>
                       </div>
                       <div class="one-half">
-                          <h2 class="head-title">Responsive Layout</h2>
-                          <ul class="listcheck">
-                              <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ede justo, fringilla. </a></li>
-                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean massa onsequat massa quis enim.</a></li>
-                              <li><a href="#">Nulla consequat massa quis enim.Donec pede justo, fringilla onsequa.</a></li>
-                              <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </a></li>
-                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean mass aquis enim </a></li>
-                              <li><a href="#">Nulla consequat massa quis enim.Donec pede justo, fringillat massa.</a></li>
-                              <li><a href="#">Aenean commodo ligula eget dolor. Aenean mass aquis enim </a></li>
-                          </ul>
+                          <h2 class="head-title">Calendário de Eventos</h2>
+                          <!-- Plugin jQuery tazendo os eventos do partido -->
                       </div>
                     </div><!--end:whole-->
+
+
                     <div class="whole">
-                      <h2 class="head-title2">Newly Design <span>Our Team</span> Structure</h2>
-                      <div class="one-half team2 first">
-                        <div class="team-sub">
-                          <a href="about.html"><img src="images/user-4.jpg" alt=""/></a>
-                          <h4><a href="about.html">Louie Jie Mahusay <br><span>Project Manager</span></a></h4>
-                          <span class="mail"><a href="#" class="tip" title="Mail"><img src="images/mail.png" alt=""></a></span>
-                        </div>
-                        <div class="team-sub2">
-                          <div class="detail-skill">
-                            <p>Quisque pellentesque mauris et tortor vestibulum.</p>
-                            <div class="meter reds">
-                              <h5>Wordpress <strong>78%</strong></h5>
-                              <span class="meter-wp"></span>
-                            </div>
-                            <div class="meter reds">
-                                <h5>HTML5/CSS3 <strong>90%</strong></h5>
-                                <span class="meter-htmlcss"></span>
-                            </div>
-                          </div><!--end:detail-skill-->
-                          <ul class="social2">
-                            <li><a href="#" class="tip facebook" title="Facebook"><img src="images/social-facebook.png" alt=""></a></li>
-                            <li><a href="#" class="tip twitter" title="Twitter"><img src="images/social-twitter.png" alt=""></a></li>
-                            <li><a href="#" class="tip skype" title="Skype"><img src="images/social-skype.png" alt=""></a></li>
-                            <li><a href="#" class="tip googleplus" title="Google+"><img src="images/social-googleplus.png" alt=""></a></li>
+                      <div class="one-half first">
+                          <h2 class="head-title" style="margin-left:10%;"><span>Galeria de Fotos</span></h2>
+                          <ul class="listcheck">
+
+                            <% @artigos.each do |a| %>
+                            <li><%= link_to a.title, :controller => 'home', :action => 'index'  %></li>
+                            <% end %>
                           </ul>
-                        </div><!--end:team-sub2-->
-                      </div><!--end:team2-->
-                      <div class="one-half team2">
-                        <div class="team-sub">
-                          <a href="about.html"><img src="images/user-5.jpg" alt=""></a>
-                          <h4><a href="about.html">Marry Grace Belarmino <br><span>System Analyst</span></a></h4>
-                          <span class="mail"><a href="#" class="tip" title="Mail"><img src="images/mail.png" alt=""></a></span>
-                        </div>
-                        <div class="team-sub2">
-                          <div class="detail-skill">
-                            <p>Quisque pellentesque mauris et tortor vestibulum.</p>
-                            <div class="meter reds">
-                                <h5>Photoshop Design <strong>87%</strong></h5>
-                                <span class="meter-psd"></span>
-                            </div>
-                            <div class="meter reds">
-                                <h5>Javascript <strong>65%</strong></h5>
-                                <span class="meter-js"></span>
-                            </div>
-                          </div><!--end:detail-skill-->
-                          <ul class="social2">
-                            <li><a href="#" class="tip facebook" title="Facebook"><img src="images/social-facebook.png" alt=""></a></li>
-                            <li><a href="#" class="tip twitter" title="Twitter"><img src="images/social-twitter.png" alt=""></a></li>
-                            <li><a href="#" class="tip skype" title="Skype"><img src="images/social-skype.png" alt=""></a></li>
-                            <li><a href="#" class="tip googleplus" title="Google+"><img src="images/social-googleplus.png" alt=""></a></li>
-                          </ul>
-                        </div><!--end:team-sub2-->
-                      </div><!--end:team2-->
+                      </div>
+                      <div class="one-half">
+                          <h2 class="head-title"><span>Enquete</span></h2>
+                          <!-- enquete -->
+
+                          <% if @survey.avaliable_for_participant?(@participant) %>
+                              <%= render 'form' %>
+                            <% else %>
+                              Uupss, <%= @participant.name %> you have reach the maximum number of
+                              attempts for <%= @survey.name %>
+                            <% end %>
+
+                            <% # in _form.html.erb %>
+                            <%= form_for [:contests, @attempt] do |f| %>
+                              <%= f.fields_for :answers do |builder| %>
+                                <ul>
+                                  <% @survey.questions.each do |question| %>
+                                    <li>
+                                      <p><%= question.text %></p>
+                                      <%= builder.hidden_field :question_id, :value => question.id %>
+                                      <% question.options.each do |option| %>
+                                        <%= builder.check_box :option_id, {}, option.id, nil %>
+                                        <%= option.text %> <br/ >
+                                      <% end -%>
+                                    </li>
+                                  <% end -%>
+                                </ul>
+                              <% end -%>
+                              <%= f.submit "Submit" %>
+                            <% end -%>
+
+                      </div>
                     </div><!--end:whole-->
+
                 </div><!--end:content-wrapper-->
             </div><!--end:container-->
         </div><!--end:container_wrap-->
