@@ -37,7 +37,7 @@
                         <div class="one-fourth first">
                             <%= image_tag sn.imagenews_url(:mini_thumb) %>
                             <h3><%= truncate sn.title %></h3>
-                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description) %></p>
+                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, :lenght => '150') %></p>
                             <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
                         </div>
                         <% end %>
