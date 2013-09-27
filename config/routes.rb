@@ -73,6 +73,9 @@ Pdtms::Application.routes.draw do
 
   get 'home/shownoticesec'
 
+  match "contact", to: "contact#where", as: "contact"
+  match "dispatch_email", to: "contact#dispatch_email", as: "dispatch_email", method: :post
+
  
 
   # The priority is based upon order of creation:

@@ -1,3 +1,4 @@
+#encoding: utf-8
 class HomeController < ApplicationController
    helper_method :survey, :participant
   def index
@@ -94,5 +95,15 @@ class HomeController < ApplicationController
     end
 
   end # show news secundary individual
+
+  def dispatch_email
+    user_info = params[:user_info]
+    if ContactMailer.send_email(user_info).deliver
+      flash[:notice] = "Mensagem enviada."
+    else
+      flash[:notice] = "Oops. Sua mensagem não pôde ser enviada."
+    end
+    redirect_to contact_url
+  end
 
 end

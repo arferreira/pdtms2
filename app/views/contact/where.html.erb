@@ -4,56 +4,44 @@
             	<section class="primary-content">
                 	<h2 class="h-title">Veja nossa Localização no mapa</h2>
                     <div class="map-with-heading">
-                        <div id="basic_map" class="map"></div>	
+                        <div id="basic_map" class="map">
+
+                            <iframe width="755" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=+Rua+Abr%C3%A3o+Julio+Rahe,+2399+-+Santa+f%C3%A9%2F+Cep+79021-120+-+Campo+Grande%2FMS&amp;sll=-20.875572,-54.261694&amp;sspn=1.493531,2.570801&amp;ie=UTF8&amp;hq=Rua+Abr%C3%A3o+Julio+Rahe,+2399+-&amp;hnear=79021-120&amp;t=m&amp;ll=-20.45011,-54.591421&amp;spn=0.006295,0.020161&amp;output=embed"></iframe>
+                        </div>	
                     </div>
                     <p>Ut vitae sapien nec sem lacinia euismod. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Ut vitae sapien nec sem lacinia euismod. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel. Mauris quis mauris odio, a ultricies eros pharetra nisi facilisis. Fusce sagittis cursus risus, et hendrerit magna pellentesque vel.</p>
                     <ul class="info-area">
-                    	<li class="location">Endereço do diretório, Campo Grande - Mato Grosso do Sul</li>
-                        <li class="tel">(67) 456-6567</li>
+                    	<li class="location"> Rua Abrão Julio Rahe, 2399 - Santa fé/ Cep 79021-120 - Campo Grande/MS</li>
+                        <li class="tel">(67) 3325-5212 - Fax: (67) 3384-8163</li>
                         <li class="email"><a href="mailto:redacao@pdtms.org.br">redacao@pdtms.org.br</a></li>
-                        <li class="skype">skype.username</li>
+                        <li class="skype">pdtms13</li>
                     </ul>
                     <h2 class="h-title">Por favor envie-nos um contato por email</h2><br>
-                    <div id="form-message"></div>
-				        <form action="http://html5awesome.com/themeforest/disenio/style3/php/contact.php" method="post" id="contactform" class="contactform">
-				          <fieldset>
-				            <ol>
-				              <li>
-				                <label for="name" class="label-block">Seu Nome *</label>
-				                <input type="text" name="name" id="name">
-				              </li>
-				              <li>
-				                <label for="email" class="label-block">Seu Email *</label>
-				                <input type="text" name="email" id="email">
-				              </li>
-				              <li>
-				                <label for="website" class="label-block">Seu Site</label>
-				                <input type="text" name="website" id="website">
-				              </li>
-				              <li>
-				                <label for="subject" class="label-block">Assunto</label>
-				                <input type="text" name="subject" id="subject">
-				              </li>
-				              <li class="message-wrap">
-				                <label for="message" class="label-block">Sua Mensagem *</label>
-				                <!-- <textarea cols="20" rows="10" id="message" name="message"></textarea> -->
-				                <textarea id="message" name="message" cols="45" rows="8" aria-required="true"></textarea>
-				              </li>
-				            </ol>
-				          </fieldset>
-				          <input type="submit" class="submit" value="Enviar Mensagem">
-				        </form>
+                    <div id="form-message"><p id="notice"><%= notice %></p></div>
+
+                    <!-- renderizar formulario de contato -->
+                    <%= form_tag(dispatch_email_path, :class => 'contactform', method: :post) do %>
+                         <%= label_tag "user_info[name]", "Nome*", :class => 'label-block' %><br/>
+                          <%= text_field_tag "user_info[name]", "" , :style => 'border:1px solid #000f2e; width:300px;'%><br />
+                          <%= label_tag "user_info[email]", "Email*", :class => 'label-block' %><br/>
+                          <%= text_field_tag "user_info[email]","", :style => 'border:1px solid #000f2e; width:300px;' %><br />
+                          <%= label_tag "user_info[message]", "Mensagem*", :class => 'label-block' %><br/>
+                          <%= text_area_tag "user_info[message]", "", size: "90x10", :style => 'border:1px solid #000f2e;' %><br/>
+                          
+                          <%= submit_tag "Enviar email", :style => 'width:240px; color:white; background:#000f2e;' %>
+
+                    <% end %>
+
+				       
+                        <!-- end contact form -->
             	</section>
                 <aside class="sidebar">
                     <div class="side">
                       <h3 class="head-title">Últimas noticias</h3>
                       <ul class="latest-project">
-                        <li><a href="#"><img src="/images/work/work-thumb-1.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="/images/work/work-thumb-2.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="/images/work/work-thumb-3.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="/images/work/work-thumb-4.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="/images/work/work-thumb-5.jpg" alt=""></a></li>
-                        <li><a href="#"><img src="/images/work/work-thumb-6.jpg" alt=""></a></li>
+                        <% @news_featured.each do |nf| %>
+                        <li><a href="#"><%= image_tag nf.imagenews_url(:mini_thumb)%></li>
+                        <% end %>
                       </ul>
                     </div><!-- end side -->
                     <div class="side">

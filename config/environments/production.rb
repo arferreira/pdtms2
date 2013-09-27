@@ -12,7 +12,13 @@ Pdtms::Application.configure do
   config.serve_static_assets = true
 
 
-
+  config.action_mailer.default_url_options = {host: 'http://www.pdtms.org.br' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = {
+    location: '/usr/sbin/sendmail',
+    arguments: "-i -t -f redacao@pdtms.org.br"
+  }
  
 
   # Defaults to nil and saved in location specified by config.assets.prefix
