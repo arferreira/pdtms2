@@ -249,6 +249,7 @@ DEPENDENCIES
   fastercsv
   formtastic (~> 2.1.0)
   haml
+  inherited_resources
   jquery-rails (~> 2.3.0)
   kaminari
   mini_magick

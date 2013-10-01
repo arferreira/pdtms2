@@ -11,26 +11,23 @@
               </ul>
             </div>
             <div class="one-fourth">
-              <h3>Recentes do <span>Blog</span></h3>
+              <h3>Recentes da <span>Galeria</span></h3>
               <div class="r-blog">
+                <% 
+
+                   @galeria = Gallery.last(:limit => 3) 
+
+                   @fotos = Foto.where(gallery_id: @galeria)
+
+                %>
+                <% @fotos.each do |foto| %>
                 <div class="third"> 
-                    <img src="images/blog/thumb-1.jpg" alt="" /> 
-                    <small><a href="blog.html">August 28, 2013</a></small> 
-                    <h4><a href="#">Sample Popular Post</a></h4>
-                    <p>Aenean commodo ligula eget dolor</p>
+                    <%= image_tag foto.imagefoto_url(:mini_thumb).to_s %> 
+                    <small><a href="blog.html"><%= @galeria.created_at.strftime('%d/%M/%Y') %></a></small> 
+                    <h4><a href="#"><%= @galeria.name %></a></h4>
+                    <p><%= @galeria.description %></p>
                 </div>
-                <div class="third"> 
-                    <img src="images/blog/thumb-2.jpg" alt="" /> 
-                    <small><a href="blog.html">August 28, 2013</a></small> 
-                    <h4><a href="#">Sample Popular Post</a></h4>
-                    <p>Aenean commodo ligula eget dolor</p>
-                </div>
-                <div class="third"> 
-                    <img src="images/blog/thumb-2.jpg" alt="" /> 
-                    <small><a href="blog.html">August 28, 2013</a></small> 
-                    <h4><a href="#">Sample Popular Post</a></h4>
-                    <p>Aenean commodo ligula eget dolor</p>
-                </div>
+               <% end %>
               </div>
             </div>
             <div class="one-fourth">

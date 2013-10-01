@@ -17,6 +17,8 @@ class HomeController < ApplicationController
 
     @poll = survey
 
+    @galerias = feedgaleria
+
   end
 
   # create a new attempt to this survey
@@ -129,6 +131,13 @@ class HomeController < ApplicationController
       flash[:notice] = "Oops. Sua mensagem não pôde ser enviada."
     end
     redirect_to contact_url
+  end
+
+  def feedgaleria
+    
+    galerias = Gallery.last
+
+    @foto = Foto.where(gallery_id: galerias )
   end
 
 end

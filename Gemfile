@@ -54,6 +54,8 @@ gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 
+gem 'inherited_resources' 
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

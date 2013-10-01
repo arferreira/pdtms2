@@ -8,7 +8,7 @@
                         <ul class="bxslider" style="">
                           <% @featured_news.each do |fn| %>
                             
-                          <li style="color:white; padding-bottom:40px; width:70%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:30px; margin-top:10px; position:absolute; font-size:14px;"><%= link_to fn.title, {:controller =>  'home', :action => 'shownoticedef', :id => fn.id} , :style => 'color:white;'  %></span></li>
+                          <li style="color:white; padding-bottom:40px; width:70%; opacity:80; bottom:0; background:black; filter:alpha(opacity=40); "><%= image_tag(fn.imagenews_url(:mega_thumb).to_s , :style => "height:300px; width:100%;")  %><span style="color:white; text-weight:bold; padding-left:30px; margin-top:10px; position:absolute; font-size:14px;"><%= link_to fn.title, {:controller =>  'home', :action => 'shownoticedef', :id => fn.id} , :style => 'color:white;'  %></span></li>
                             
                            
                                               
@@ -21,7 +21,7 @@
                       <div id="bx-pager" class="featured-detail-left" style="">
                         <% @featured_news.each do |fn| %>
                           <a data-slide-index="0" href="#" style="height:48px;">
-                            <%= image_tag(fn.imagenews_url(:mega_thumb) , :style => "height:40px;")  %>
+                            <%= image_tag(fn.imagenews_url(:mega_thumb).to_s , :style => "height:40px;")  %>
                             <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description) %></span></h5>
                           </a>
                           <% end %>
@@ -30,13 +30,13 @@
 
                     <center><%= link_to  'Ver todos os destaques', :controller => 'home', :action => 'newsfall' %></center> 
                     <hr>
-                    <center><h2>Noticias Secundárias</h2></center>
+                    <center><h2 class="head-title">Noticias Secundárias</h2></center>
                     <br>
                       <div class="content-wrapper" style="background:none;">
                         <div class="serv" style="padding-left:30px;">
                         <% @secondary_news.each do |sn| %>
                         <div class="one-fourth first">
-                            <%= image_tag sn.imagenews_url(:mini_thumb) %>
+                            <%= image_tag sn.imagenews_url(:mini_thumb).to_s %>
                             <h3><%= truncate sn.title %></h3>
                             <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, :lenght => '350') %></p>
                             <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
@@ -52,7 +52,7 @@
                     <!-- Carregando feed de videos do partido -->
 
                     <div class="list_work">
-                    <h2>Últimos Videos do PDT</h2>
+                    <h2 class="head-title">Últimos Videos do PDT</h2>
                         <ul id="mycarousel" class="jcarousel-skin-tango item da-thumbs">
                           <% @moves.each do |move| %>
                           <!-- Feed of moves -->
@@ -60,12 +60,12 @@
                                 <a href="images/preview/work_1_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
                                     <iframe width="245" height="235" src="<%= move.link %>" frameborder="0" allowfullscreen></iframe>
                                     <div>
-                                        <h2>The Meeting Place</h2>
+                                        <h2>PDT MS</h2>
                                         <span class="image-hover-icon"></span>
-                                        <small>Illustration, Web Design</small>
+                                        <small>Nossos videos</small>
                                     </div>
                                 </a>
-                                <h2 class="entry-title"><a href="#">The Meeting Place</a></h2>
+                                <h2 class="entry-title"><a href="#">PDT MS</a></h2>
                             </li>
                             <% end %>
                             <!--End moves-->
@@ -76,7 +76,7 @@
 
                     <div class="whole">
                       <div class="one-half first">
-                          <h2 style="margin-left:10%;">Artigos</h2>
+                          <h2 class="head-title" style="margin-left:10%;"><span>Artigos</span></h2>
                           <ul class="listcheck">
 
                             <% @artigos.each do |a| %>
@@ -85,7 +85,7 @@
                           </ul>
                       </div>
                       <div class="one-half">
-                          <h2 class="head-title">Calendário de Eventos</h2>
+                          <h2 class="head-title"><span>Calendário de Eventos</span></h2>
                           <!-- Plugin jQuery tazendo os eventos do partido -->
                       </div>
                     </div><!--end:whole-->
@@ -94,12 +94,12 @@
                     <div class="whole">
                       <div class="one-half first">
                           <h2 class="head-title" style="margin-left:10%;"><span>Galeria de Fotos</span></h2>
-                          <ul class="listcheck">
 
-                            <% @artigos.each do |a| %>
-                            <li><%= link_to a.title, :controller => 'home', :action => 'index'  %></li>
-                            <% end %>
-                          </ul>
+                               <ul class="latest-project">
+                                <% @galerias.each do |g| %>
+                                <li><a href="#"><%= image_tag g.imagefoto_url(:mini_thumb).to_s %></a></li>
+                                <% end %>
+                                </ul>
                       </div>
                       <div class="one-half">
                           <h2 class="head-title"><span>Enquete</span></h2>

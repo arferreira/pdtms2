@@ -1,4 +1,13 @@
 Pdtms::Application.routes.draw do
+  resources :fotos
+
+
+  resources :photos
+
+
+  resources :galleries
+
+
   resources :previdenciasocials
 
 

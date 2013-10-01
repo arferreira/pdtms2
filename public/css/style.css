@@ -121,7 +121,7 @@ footer{ width:100%; float:left; background:	#052d60; padding:0 0; border-top: 2p
 
 h2.h-title{ font-weight:700; border-bottom:1px solid #ddd; padding-bottom: 10px;}
 h3.h-title{ font-weight:700; border-bottom:1px solid #ddd; padding-bottom: 10px;}
-h2.head-title{ font-weight:700; padding-bottom: 20px; background: url(../images/h-title.png) no-repeat left bottom;}
+h2.head-title{ font-weight:700; padding-bottom: 20px; background: url(images/h-title.png) no-repeat left bottom;}
 h2.head-title span{ font-size: 20px; color: #052d60; font-weight:700;}
 h3.head-title{ font-weight:700; padding-bottom: 20px; background: url(../images/h-title.png) no-repeat left bottom;}
 h2.head-title2{ font-weight:700; border-bottom:1px solid #ddd; padding-bottom: 10px; width: 100%; text-align:  center; font-size: 20px; margin-bottom: 30px;}

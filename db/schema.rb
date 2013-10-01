@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130927214010) do
+ActiveRecord::Schema.define(:version => 20131001190655) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -110,6 +110,22 @@ ActiveRecord::Schema.define(:version => 20130927214010) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "fotos", :force => true do |t|
+    t.string   "imagefoto"
+    t.integer  "gallery_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "fotos", ["gallery_id"], :name => "index_fotos_on_gallery_id"
+
+  create_table "galleries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "historia", :force => true do |t|
     t.text     "content"
     t.string   "image"
@@ -184,6 +200,15 @@ ActiveRecord::Schema.define(:version => 20130927214010) do
     t.datetime "updated_at",  :null => false
     t.string   "imagenews"
   end
+
+  create_table "photos", :force => true do |t|
+    t.string   "imagephoto"
+    t.integer  "gallery_id_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "photos", ["gallery_id_id"], :name => "index_photos_on_gallery_id_id"
 
   create_table "previdenciasocials", :force => true do |t|
     t.text     "content"
