@@ -22,7 +22,7 @@
                         <% @featured_news.each do |fn| %>
                           <a data-slide-index="0" href="#" style="height:48px;">
                             <%= image_tag(fn.imagenews_url(:mega_thumb).to_s , :style => "height:40px;")  %>
-                            <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description) %></span></h5>
+                            <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description, length: 70) %></span></h5>
                           </a>
                           <% end %>
                       </div> 
@@ -38,7 +38,7 @@
                         <div class="one-fourth first">
                             <%= image_tag sn.imagenews_url(:mini_thumb).to_s %>
                             <h3><%= truncate sn.title %></h3>
-                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, :lenght => '350') %></p>
+                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, length: 200) %></p>
                             <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
                         </div>
                         <% end %>
@@ -97,7 +97,8 @@
 
                                <ul class="latest-project">
                                 <% @galerias.each do |g| %>
-                                <li><a href="#"><%= image_tag g.imagefoto_url(:mini_thumb).to_s %></a></li>
+                                <li><a href="<%= g.imagefoto_url(:banner_thumb).to_s %>" data-lightbox="roadtrip"><%= image_tag(g.imagefoto_url(:mini_thumb).to_s)  %></a></li>
+                                
                                 <% end %>
                                 </ul>
                       </div>

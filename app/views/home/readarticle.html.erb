@@ -17,7 +17,7 @@
                             	<p>
                                     <span><a href="#" class="admin"><%= @news_secondary.author %></a></span>
                                     <span><a href="blog.html" class="date"><%= @news_secondary.date%></a></span>
-                                    <span><a href="#" class="cat">Notícias Secundárias</a></span>
+                                    <span><a href="#" class="cat">Artigos</a></span>
                                 </p>
                                 <p class="bubble">
                                     <a class="spch-bub-inside" href="single.html">
@@ -34,17 +34,17 @@
                           <%= render_shareable :url=> 'http://www.pdtms.org.br/', :facebook=> {:send=> 'true', :url=> 'http://www.pdtms.org.br/'} %>
                         </div>
                         </article>
-                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <h3 class="h-title">Últimos artigos</h3>
                         <div class="related-post">
                             <ul class="da-thumbs">
-                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed = Article.find(:all, :limit => 3, :order => 'id desc') %>
                                 <% @feed.each do |fs| %>
                             	<li>
                                 	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
-                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <%= image_tag fs.imagearticle_url(:thumb) %>
                                         <div><span class="image-link-icon"></span></div>
                                     </a>
-                                    <h3><a href="blog.html"><%= fs.title %></a></h3>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'readarticle', :id => fs.id  %></a></h3>
                                 </li>
                                 <% end %>
                             </ul>
