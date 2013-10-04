@@ -109,7 +109,7 @@ header{ margin:0; width:100%; float:left; position: relative; background: #052d6
 footer{ width:100%; float:left; background:	#052d60; padding:0 0; border-top: 2px solid red; position: relative; }
 .footer_wrap{ max-width: 72em; margin: 0 auto; }
 .copy-right-wrap{ max-width: 64.8em; margin: 0 auto;}
-.footer-container{ margin:0 30px; display:block; padding: 0 30px; margin-top: -10px; padding-top: 50px; border-top: 3px solid red; background:  bottom center #000f2e; float: left;}
+.footer-container{width: 91%; margin:0 30px; display:block; padding: 0 30px; margin-top: -10px; padding-top: 50px; border-top: 3px solid red; background:  bottom center #000f2e; float: left;}
 
 /*column*/
 .whole{ width:100%; float:left; margin-bottom:0px;}
@@ -675,7 +675,7 @@ background:
 			#f6f6f6 1px,
 			#FFFFFF 20px
 			);}
-#tab .nav li a.current{ border:1px solid #121212; color:#fff; background: #181818;}
+#tab .nav li a.current{ border:1px solid #121212; color:#fff; background: #052d60;}
 #tab .nav li a.current:hover{ color:#fff !important;}
 #tab .list-wrap{ width:auto; float:left; border:1px solid #ddd; display:block; padding:20px 10px;}
 #tab .list-wrap #recent,

@@ -1,4 +1,4 @@
-    <div id="page_wrap" >
+    <div id="page_wrap" style="margin-bottom:40px;">
         <div class="container_wrap" style="padding:10px; margin-top:20px; background:#dfdfdf;">
             <div class="container">
                 <div class="content-wrapper">
@@ -73,11 +73,12 @@
                     </div><!--end:list_work-->
 
                     <!--Fechando feed de videos-->
+                     <br><br><hr>
 
                     <div class="whole">
                       <div class="one-half first">
                           <h2 class="head-title" style="margin-left:10%;"><span>Artigos</span></h2>
-                          <ul class="listcheck">
+                          <ul class="listcheck" style="padding-left:20px;">
 
                             <% @artigos.each do |a| %>
                             <li><%= link_to a.title, :controller => 'home', :action => 'readarticle', :id => a.id  %></li>
@@ -87,21 +88,69 @@
                       <div class="one-half">
                           <h2 class="head-title"><span>Calendário de Eventos</span></h2>
                           <!-- Plugin jQuery tazendo os eventos do partido -->
+                          <div class="dzscalendar" id="tr1" style="padding-left:20px;">
+                          <div class="events">
+                          <div class="realmarkupindocs" data-date="10-8-2012">
+                          <div style="width:240px;">
+                          <h5>Meeting at Palace</h5>
+                          <span class="label">Date: </span>11-8-2012 at 6PM<br/>
+                          <span class="label">Location: </span>Bremen, Germany<br/>
+                          <br/>Ana is meeting with you in the town square.
+                          </div>
+                          </div>
+                          <div class="realmarkupindocs" data-date="11-8-2012">
+                          <div style="width:240px;">
+                          <h5>Meeting at Palace</h5>
+                          <span class="label">Date: </span>11-8-2012 at 6PM<br/>
+                          <span class="label">Location: </span>Bremen, Germany<br/>
+                          <br/>Ana is meeting with you in the town square.
+                          </div>
+                          </div>
+                          </div>
+                          </div>
                       </div>
                     </div><!--end:whole-->
 
-
+                     <br><br><hr>
                     <div class="whole">
-                      <div class="one-half first">
-                          <h2 class="head-title" style="margin-left:10%;"><span>Galeria de Fotos</span></h2>
+                    <div class="one-half first">
+                      <h2 class="head-title" style="margin-left:10%;"><span>Galeria de Fotos</span></h2>
+                      <div id="tab" style="padding-left:20px;">
+                          <ul class="nav">
+                            <% @galleryall.each do |gal| %>
 
-                               <ul class="latest-project">
-                                <% @galerias.each do |g| %>
-                                <li><a href="<%= g.imagefoto_url(:banner_thumb).to_s %>" data-lightbox="roadtrip"><%= image_tag(g.imagefoto_url(:mini_thumb).to_s)  %></a></li>
-                                
-                                <% end %>
-                                </ul>
-                      </div>
+                            <li class="<% if  @count == 0 %>nav-one<% end %> <% if  @count == 1 %>nav-two<% end %>"><a href="<% if  @count == 0 %>#recent<% end %><% if  @count == 1 %>#popular<% end %>" class="<% if  @count == 0 %>current<% end %><% if  @count == 1 %><% end %>"><%= gal.name %></a></li>
+                              
+                             <% @count = @count + 1 %> 
+
+                            <% end %>
+                          </ul>
+                          <div class="list-wrap" style="background: white;">
+
+                            <% @galleryall.each do |gal| %>
+
+
+                            <% @foto = Foto.where(gallery_id: gal.id).limit(2) %>
+
+                            <div id="<% if @aux == 0 %>recent<% end %><% if @aux == 1 %>popular<% end %>" class="<% if @aux == 0 %>blog<% end %><% if @aux == 1 %>hide blog<% end %>">
+
+                              <% @foto.each do |f| %>
+                                <div class="third">
+                                    <%= image_tag f.imagefoto_url(:mini_thumb).to_s %>
+                                    <span><a href="#"><%= gal.name %></a></span><br>
+                                    <small><a href="blog.html"><%= gal.created_at.strftime('%d %m %y') %></a></small>
+                                </div>
+
+                               <% end %> 
+                            </div>
+
+                            <% @aux = @aux + 1  %>
+                            <% end %>
+
+                            </div>
+                        </div><!--end:tab-->
+                    </div><!--end one-half-->
+
                       <div class="one-half">
                           <h2 class="head-title"><span>Enquete</span></h2>
                           <!-- enquete -->

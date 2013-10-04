@@ -11,6 +11,7 @@
     <script type="text/javascript" src="/js/jquery.bxslider.js"></script><!--bxslider-->
     <script type="text/javascript" src="/js/custom.js"></script><!--custom-->
      <script type="text/javascript" src="/js/jquery.jcarousel.min.js"> </script> <!-- list_work -->
+      <script type="text/javascript" src="/js/organictabs.jquery.js"></script><!--tabs-->
      <script src="/js/lightbox-2.6.min.js"></script>
     <script type="text/javascript">
 	/* <![CDATA[ */
@@ -25,5 +26,15 @@
     });
     /* ]]> */
     </script>
-
+    <script type="text/javascript">
+  /* <![CDATA[ */
+  $(function () {
+      new UISearch( document.getElementById( 'sb-search' ) );
+      //------TABS-------------
+      $("#tab").organicTabs({
+        "speed": 200
+      });
+  });
+  /* ]]> */
+    </script> 
   

@@ -19,6 +19,16 @@ class HomeController < ApplicationController
 
     @galerias = feedgaleria
 
+    @galleryall = countgaleria
+
+    #incrementadores
+    @count = 0
+    @aux = 0
+
+  end
+
+  def countgaleria
+    @galerias = Gallery.find(:all, :limit => 2, :order => 'id desc')
   end
 
   # create a new attempt to this survey
