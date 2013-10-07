@@ -5,7 +5,7 @@ require 'capistrano-unicorn'
 
 set :application, 'www.pdtms.org.br'
 
-set :keep_releases, 2
+set :keep_releases, 5
 
 set :scm, :git
 
@@ -19,7 +19,7 @@ set :repository, 'git@github.com:arferreira/pdtms.git'
 
 set :branch, 'master'
 
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 
 set :user, "root"
 
