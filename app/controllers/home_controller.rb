@@ -31,6 +31,33 @@ class HomeController < ApplicationController
     @attempt.answers.build
     #@participant = current_user # you have to decide what to do here
 
+
+    @events = Event.all
+
+   
+
+  end
+
+  def eventofday
+      
+      @today = Date.today
+
+      @events = Event.all
+
+      @events.each do |e|
+
+
+      if @today == e.date
+         
+          @data = e.date
+
+        else
+          @data = "Não há eventos para hoje!"
+      end  
+
+
+      end
+
   end
 
   def countgaleria

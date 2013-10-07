@@ -87,6 +87,31 @@
                       </div>
                       <div class="one-half">
                           <h2 class="head-title"><span>Calendário de Eventos</span></h2>
+                          <% 
+
+                          @hoje =  Date.today
+                          @aux = 0
+                            %>
+                          <% @events.each do |e| %>
+
+                          <%  if e.date.strftime('%Y-%m-%d') == @hoje %>                           
+                            <% @aux = @aux + 1 %>
+
+                          <% end %>
+
+                          <% end %>
+                          <% if @aux > 0 %>
+
+                          <div class="alert green_alert" style="width:80%;">
+                                <p>Nós temos <%= @aux %> para hoje!</p>
+                            </div><br><br><br><br>
+
+                          <% end %>
+                          <% if @aux == 0 %>
+                            <div class="alert green_alert" style="width:80%;">
+                                <p>Não possuimos nenhum evento para o dia de hoje!</p>
+                            </div><br><br><br><br>
+                          <% end %>
                           <!-- Plugin jQuery tazendo os eventos do partido -->
                           <div class="dzscalendar skin-black" id="tr1" style=" padding:20px;">
                 <div class="events">
