@@ -1,0 +1,113 @@
+
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                   
+                	<div id="blog-entry">
+                        <h3><%= link_to 'Visualize todos os eventos do PDT' %></h3><hr><br><br>
+
+                <% @i = 1 %>                               <!-- Inicio do loop de noticias --> 
+                <% @eventos.each do |sn| %>
+                        <article class="entry">
+
+                            <span class="post-img post"></span>
+
+                            <div class="blog-post da-thumbs">
+
+                                <div class="post blog3">
+                                 <%= image_tag('/images/cal.png')  %>   
+                                </div>
+                                <div class="blog-sub">
+                                    <h3><a href="single.html"><%= sn.title %></a></h3>
+                                    <div class="bread">
+                                        <p>
+                                            <span><a href="#" class="admin"><%= sn.city %></a></span>
+                                            <span><a href="#" class="date"><%= sn.date %></a></span>
+                                            <span><a href="#" class="cat">Eventos</a></span>
+                                        </p>
+                                        <p class="bubble">
+                                            <a class="spch-bub-inside" href="single.html">
+                                                <span class="point">@i</span>  
+                                                <em></em>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <% @i = @i + 1 %>
+                        <% end %>
+                        <!-- Final do loop de noticias -->
+
+                    </div><!--end blog-entry-->
+                <ul id="pagination">
+                    <%= paginate @eventos %>
+                </ul>
+                          
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                            	<li>
+                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'shownoticesec', :id => fs.id %></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+            	</section>
+                <aside class="sidebar">
+    <div class="side">
+                      <h3 class="head-title">Veja mais páginas</h3>
+                        <ul id="nav">
+                        <li><a href="#">PDT</a>
+                          <ul>
+                            <li><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
+                            <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
+                            <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
+                            <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
+                            <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Nossas Bandeiras</a>
+                          <ul>
+                    <li><%= link_to 'Trabalhismo', :controller => 'flags', :action => 'labour' %></li>
+                    <li><%= link_to 'Educação', :controller => 'flags', :action => 'education' %></li>
+                    <li><%= link_to 'Soberania', :controller => 'flags', :action => 'sovereignty' %></li>
+                    <li><%= link_to 'Direitos Humanos', :controller => 'flags', :action => 'humanrights' %></li>
+                    <li><%= link_to 'Previdência Social', :controller => 'flags', :action => 'foresight' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Movimentos</a>
+                          <ul>
+                            <li><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
+                    <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
+                    <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
+                  
+                          </ul>
+                        </li>
+                        <li><a href="#">PDT nos Poderes</a>
+                          <ul>
+                            <li><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
+                          </ul>
+                        </li>
+                      
+                       
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->

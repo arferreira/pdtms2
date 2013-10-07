@@ -1,9 +1,10 @@
 #encoding: utf-8
 class HomeController < ApplicationController
    helper_method :survey, :participant
+
+   helper "contests/surveys"
   
   def index
-
   	#listando as noticias destaque
   	@featured_news = featured_news
   	# ok
@@ -25,27 +26,32 @@ class HomeController < ApplicationController
     @count = 0
     @aux = 0
 
+    @survey =  Survey::Survey.active.first
+    @attempt = @survey.attempts.new
+    @attempt.answers.build
+    #@participant = current_user # you have to decide what to do here
+
   end
 
   def countgaleria
     @galerias = Gallery.find(:all, :limit => 2, :order => 'id desc')
   end
 
-  # create a new attempt to this survey
+
+
   def new
-    @attempt = survey.attempts.new
-    # build a number of possible answers equal to the number of options
-    survey.questions.size.times { @attempt.answers.build }
+    @survey =  Survey::Survey.active.first
+    @attempt = @survey.attempts.new
+    @attempt.answers.build
+    @participant = current_user # you have to decide what to do here
   end
 
-  # create a new attempt in this survey
-  # an attempt needs to have a participant assigned
   def create
-    @attempt = survey.attempts.new(params[:attempt])
-    # ensure that current user is assigned with this attempt
-    @attempt.participant = participant
+    @survey = Survey::Survey.active.first
+    @attempt = @survey.attempts.new(params[:attempt])
+    @attempt.participant = current_user
     if @attempt.valid? and @attempt.save
-      redirect_to contests_path
+      redirect_to view_context.new_attempt_path, alert: I18n.t("attempts_controller.#{action_name}")
     else
       render :action => :new
     end
@@ -87,13 +93,13 @@ class HomeController < ApplicationController
 
   def newsfall
 
-    @news_featured = Newsf.page(params['page']).per(2) #Newsf.paginate(:page => params[:page], :per_page => 2)
+    @news_featured = Newsf.page(params['page']).per(10) #Newsf.paginate(:page => params[:page], :per_page => 2)
     
   end
 
   def newssall
 
-    @news_secondary = Newss.page(params['page']).per(2) #Newss.paginate(:page => params[:page], :per_page => 1)
+    @news_secondary = Newss.page(params['page']).per(10) #Newss.paginate(:page => params[:page], :per_page => 1)
     
   end
 

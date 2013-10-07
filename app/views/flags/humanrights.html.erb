@@ -1,0 +1,95 @@
+
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<div id="blog-entry">
+                    	<article class="entry">
+                        <h3><%= link_to 'Direitos Humanos' %></h3> 
+                    	<div class="blog-post">
+                        	
+                            
+                            <div class="bread">
+
+                            </div>
+                            <p style="">
+
+                           <strong>Por Lícia Peres</strong><br><br>  
+Pode-se afirmar que o grau de civilidade alcançado por uma sociedade está relacionado com o estágio em que nela estão assegurados os direitos humanos para o conjunto da população.A Declaração Universal dos Direitos Humanos (1948), decorridos mais de 60 anos de sua proclamação, ainda é uma agenda para a humanidade, uma enunciação de princípios. O reconhecimento de um conjunto de direitos a serem protegidos como direitos humanos é um poderoso instrumento para afirmar a dignidade de todas as pessoas  pela sua condição de seres humanos  dotados de razão e consciência.
+<br>
+Existe, de fato, um hiato entre o ideal democrático e a realidade da vida cotidiana. As violações ainda ocorrem em diversas partes do mundo, inclusive no BrasilConstruir a democracia, enfrentando o quadro de preconceitos e discriminações  constituiu-se em preocupação do Trabalhismo, desde o Encontro de Lisboa(1979).Com a determinação de organizar um partido verdadeiramente nacional, popular e  democrático  foi assumida a opção  pelos oprimidos e marginalizados.Decidido a combater a discriminação de classe, de gênero, racial e étnica, o Novo Trabalhismo-  o PDT- assumirá,  dentre seus compromissos prioritários,  a causa das mulheres, dos negros, das populações indígenas e o combate a todas as formas de discriminação, buscando  a  democracia e a  justiça  social através da igualdade de oportunidades. O projeto dos CIEPS, idealizado por Darcy Ribeiro, implementado por Leonel Brizola e por diversos governos trabalhistas, representa uma verdadeira revolução no sistema educacional.<br><br>
+Entretanto, precisamos estar conscientes de que a mudança  de antigos paradigmas  não é tarefa simples. A formação da sociedade brasileira marcada por séculos de colonialismo, de mão de obra escrava, onde o patriarcalismo  excluía as mulheres do espaço público, deixou uma herança cultural  onde o preconceito ainda se inscreve como algo natural. Ademais, os anos de autoritarismo onde a democracia foi golpeada e os direitos e garantias praticamente suprimidos contribuíram para  tornar a  construção da cidadania  um autêntico desafio.
+<br>
+A Constituição de 1988 – denominada Constituição Cidadã – com a participação de amplos segmentos da população brasileira irá  assegurar os direitos e garantias fundamentais, um marco na história brasileira.<br><br>
+Mas, sabemos que esse ideal democrático ainda necessita ser efetivado, o que exige a ação decidida do Estado através de políticas públicas para a inclusão de setores marginalizados e da adoção de ações afirmativas para mulheres, negros , índios e aqueles que por alguma deficiência são portadores de necessidades especiais, de modo a  possibilitar sua plena participação na vida econômica, social, política e cultural .A denúncia de constantes violações dos direitos humanos com a prática de maus tratos e condições subumanas nos presídios brasileiros é algo que deve ser abolido.  É indispensável uma Educação de qualidade comprometida com a afirmação dos direitos humanos em que  o respeito à diversidade de gênero, de raça, de credo,de orientação sexual –o respeito à diferença-  constituam um valor irrenunciável . A ação conjunta do Poder Público e o protagonismo da sociedade organizada poderão operar a transformação desses padrões de dominação  e ajudar nosso país a se tornar uma grande nação. O PDT historicamente está comprometido com essa causa e, assim, conclama a todos aqueles e aquelas que se candidatam pela a nossa legenda  que assumam a bandeira dos direitos humanos e ajudem a  construir um Brasil para todos os brasileiros e brasileiras.
+                            </p><br>
+                           <hr>
+                            <p></p>
+                            <hr>
+                        </div>
+                        </article>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                            	<li>
+                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'shownoticesec', :id => fs.id %></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+            	</section>
+                <aside class="sidebar">
+    <div class="side">
+                      <h3 class="head-title">Veja mais páginas</h3>
+                        <ul id="nav">
+                        <li><a href="#">PDT</a>
+                          <ul>
+                            <li><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
+                            <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
+                            <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
+                            <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
+                            <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Nossas Bandeiras</a>
+                          <ul>
+                    <li><%= link_to 'Trabalhismo', :controller => 'flags', :action => 'labour' %></li>
+                    <li><%= link_to 'Educação', :controller => 'flags', :action => 'education' %></li>
+                    <li><%= link_to 'Soberania', :controller => 'flags', :action => 'sovereignty' %></li>
+                    <li><%= link_to 'Direitos Humanos', :controller => 'flags', :action => 'humanrights' %></li>
+                    <li><%= link_to 'Previdência Social', :controller => 'flags', :action => 'foresight' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Movimentos</a>
+                          <ul>
+                            <li><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
+                    <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
+                    <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
+                  
+                          </ul>
+                        </li>
+                        <li><a href="#">PDT nos Poderes</a>
+                          <ul>
+                            <li><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
+                          </ul>
+                        </li>
+                      
+                       
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->

@@ -68,11 +68,18 @@
     </script>
     <script>
 jQuery(document).ready(function($){
+
+date = new Date();
+mes = String(date.getMonth());
+ano = String(date.getFullYear());
+
 $('#tr1').dzscalendar({
-start_month: '5' // you can define a custom start month and year
-,start_year: '2014'
+
+start_month: mes // you can define a custom start month and year
+,start_year: ano
 });
 })
 </script>
+<script type="text/javascript" src="/js/accordion.js"></script><!--Accordion-->
 </body>
 </html>

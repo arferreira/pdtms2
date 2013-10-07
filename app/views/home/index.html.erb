@@ -88,25 +88,27 @@
                       <div class="one-half">
                           <h2 class="head-title"><span>Calendário de Eventos</span></h2>
                           <!-- Plugin jQuery tazendo os eventos do partido -->
-                          <div class="dzscalendar" id="tr1" style="padding-left:20px;">
-                          <div class="events">
-                          <div class="realmarkupindocs" data-date="10-8-2012">
-                          <div style="width:240px;">
-                          <h5>Meeting at Palace</h5>
-                          <span class="label">Date: </span>11-8-2012 at 6PM<br/>
-                          <span class="label">Location: </span>Bremen, Germany<br/>
-                          <br/>Ana is meeting with you in the town square.
-                          </div>
-                          </div>
-                          <div class="realmarkupindocs" data-date="11-8-2012">
-                          <div style="width:240px;">
-                          <h5>Meeting at Palace</h5>
-                          <span class="label">Date: </span>11-8-2012 at 6PM<br/>
-                          <span class="label">Location: </span>Bremen, Germany<br/>
-                          <br/>Ana is meeting with you in the town square.
-                          </div>
-                          </div>
-                          </div>
+                          <div class="dzscalendar skin-black" id="tr1" style=" padding:20px;">
+                <div class="events">
+                <div class="event-tobe" data-repeat="everymonth" data-day="4">
+                    <div style="width:170px;">
+                        <h5>Meeting at Palace</h5>
+                        <span class="label">Date</span> 11-8-2012 at 6PM<br/>
+                        <span class="label">Location</span> Bremen, Germany<br/>
+                        <br/>Ana is meeting with you in the town square.
+                    </div>
+                </div>
+                <div class="event-tobe" data-repeat="everymonth" data-day="18" data-type="link" data-href="http://bit.ly/nM4R6u">
+                    <div style="width:170px;">
+                        <h5>Meeting at Palace</h5>
+                        <span class="label">Date</span> 11-8-2012 at 6PM<br/>
+                        <span class="label">Location</span> Bremen, Germany<br/>
+                        <br/>Ana is meeting with you in the town square.
+                    </div>
+                </div>
+                <div class="event-tobe" data-repeat="everymonth" data-day="10"></div>
+
+            </div>
                           </div>
                       </div>
                     </div><!--end:whole-->
@@ -154,7 +156,8 @@
                       <div class="one-half">
                           <h2 class="head-title"><span>Enquete</span></h2>
                           <!-- enquete -->
-
+                          
+                          <% # render 'contests/attempts/form' %>
 
 
                       </div>

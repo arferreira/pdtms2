@@ -1,0 +1,98 @@
+
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<div id="blog-entry">
+                    	<article class="entry">
+                        <h3><%= link_to 'Soberania' %></h3> 
+                    	<div class="blog-post">
+                        	
+                            
+                            <div class="bread">
+
+                            </div>
+                            <p style="">
+
+                               <strong>Por Ricardo Viana</strong><br><br>
+ 
+É muito importante compreendermos as duas palavras que formam o termo “Soberania Nacional” e sua relação ao conceito de Estado[1]. Podemos compreender o conceito de soberania ao exercício de poder no processo de organização social e na construção do atual Estado Moderno, que utiliza-se do uso de normas, ações, decisões e elaborações dentro de interesses próprios, diretamente relacionados ao jogo de poder, a autoridade social, política e independência de um Estado. Em sítese, podemos trabalhar com o conceito de que soberania refere-se à qualquer condição de não conhecimento de superioridade que venha de ordem externa ou interna que possa interfir na constituição de Estado. Por outro lado, quando nos referimos a Nacionalismo[2] ou sentimento nacional tratamos da valorização dominante, marcada e construída históricamente por valores de uma nação, com grande cunho sociológico e ideológico.
+Assim, Soberania Nacional trata-se das idéias que sustentam, fortalecem e valorizam os interesses da nação como fonte única do poder de Estado, onde o órgão governamental só exerce legitimamente de suas ações mediante a um consenso nacional, sendo de fato, o uso do conceito de soberania originado através da nação, de seus interesses únicos, indivisíveis, inalienáveis e imprescritíveis.
+ <br><br>
+ <hr>
+<p>
+<h6>Bibliografia GELLNER, E. Nations and Nationalism. Ithaca: Cornell University Press, 1983
+[1] É muito comum utilizarmos o conceito de Estado para definirmos as instituições de governo, sendo elas conceitos antigos e modernos. Mas quando nos referimos ao conceito de Estado Moderno devemos ter claro que tal conceito suporta um série de características que foram fundamentadas no início do século XV, quando o termo "estado" adquiriu o atual significado que conhecemos, no sentido de referência aos modernos sistemas políticos. Casualmente vemos o uso dos termos "país", "nação" e "estado" sendo utilizados como sinônimos, mas são coisas distintas. Estado refere-se ao conjunto de instituições que regulam e constituem a soberania ao longo de um território definido.
+[2] Segundo o Filósofo e Sociólogo Ernst Gellner, em sua obra Nations and Nationalism (1983) o nacionalismo é a ideologia fundamental da terceira fase da história da humanidade, a fase industrial, quando os estados nação se tornam a forma de organização político cultural que substitui o império.
+</h6></p>
+                            </p><br>
+                           <hr>
+                            <p></p>
+                            <hr>
+                        </div>
+                        </article>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                            	<li>
+                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'shownoticesec', :id => fs.id %></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+            	</section>
+                <aside class="sidebar">
+    <div class="side">
+                      <h3 class="head-title">Veja mais páginas</h3>
+                        <ul id="nav">
+                        <li><a href="#">PDT</a>
+                          <ul>
+                            <li><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
+                            <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
+                            <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
+                            <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
+                            <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Nossas Bandeiras</a>
+                          <ul>
+                    <li><%= link_to 'Trabalhismo', :controller => 'flags', :action => 'labour' %></li>
+                    <li><%= link_to 'Educação', :controller => 'flags', :action => 'education' %></li>
+                    <li><%= link_to 'Soberania', :controller => 'flags', :action => 'sovereignty' %></li>
+                    <li><%= link_to 'Direitos Humanos', :controller => 'flags', :action => 'humanrights' %></li>
+                    <li><%= link_to 'Previdência Social', :controller => 'flags', :action => 'foresight' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Movimentos</a>
+                          <ul>
+                            <li><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
+                    <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
+                    <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
+                  
+                          </ul>
+                        </li>
+                        <li><a href="#">PDT nos Poderes</a>
+                          <ul>
+                            <li><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
+                          </ul>
+                        </li>
+                      
+                       
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->

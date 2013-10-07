@@ -1,6 +1,8 @@
 class PdtController < ApplicationController
 
 	def history
+
+		@historia = Historium.last
 		
 	end
 

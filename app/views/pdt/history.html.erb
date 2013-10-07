@@ -1,0 +1,103 @@
+
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+            	<section class="primary-content">
+                	<div id="blog-entry">
+                    	<article class="entry">
+                        <h3><%= link_to 'A História do Partido' %></h3> 
+                    	<div class="blog-post">
+                        	<%= image_tag('/images/historiapdt.jpg') %>
+                            
+                            <div class="bread">
+
+                            </div>
+                            <p style="">O PDT – Partido Democrático Trabalhista surgiu em 17 de junho de 1979, em Lisboa, fruto do encontro dos trabalhistas no Brasil com os trabalhistas no exílio, liderados por Leonel Brizola. Seu objetivo era reavivar o PTB, Partido Trabalhista Brasileiro, criado por Getúlio Vargas, presidido por João Goulart e proscrito pelo Golpe de 1964. Desse encontro, ao qual esteve presente o líder português Mário Soares, representando a Internacional Socialista, saiu a Carta de Lisboa, que definiu as bases do novo partido.<br><br>
+
+"O novo Trabalhismo" - dizia o documento - "contempla a propriedade privada, condicionando seu uso às exigências do bem-estar social. Defende a intervenção do Estado na economia, mas como poder normativo, uma proposta sindical baseada na liberdade e na autonomia sindicais e uma sociedade socialista e democrática.”
+<br><br>
+Uma manobra jurídica, patrocinada pela ditadura, no entanto, conferiu a sigla a um grupo de aventureiros e adesistas, que se aliou às elites dominantes, voltando-se contra os interesses dos trabalhadores. Leonel Brizola, depois de 15 anos de desterro, Doutel de Andrade, Darcy Ribeiro e outros trabalhistas históricos já tinham retornado ao Brasil, quando a Justiça Eleitoral entregou, em 12 de maio de 1980, o PTB àquele grupo.
+<br><br>
+"Consumou-se o esbulho", denunciou Brizola, chorando e rasgando diante da televisão um papel sobre o qual escrevera aquelas três letras, que durante tanto tempo simbolizara as lutas sociais no Brasil.
+<br>
+"Uma sórdida manobra governamental " - disse ele - "conseguiu usurpar a nossa sigla para entregá-la a um pequeno grupo de subservientes ao poder... O objetivo dessa trama é impedir a formação de um partido popular e converter o PTB em instrumento de engodo para as classes trabalhadoras."
+Uma semana depois, nos dias 17 e 18 de maio, os trabalhistas autênticos reuniam-se no Palácio Tiradentes, sede da Assembleia Legislativa do Rio de Janeiro, para o Encontro Nacional dos Trabalhistas, que contou com a participação de mais de mil pessoas. Lá, foi anunciada a adoção de uma nova sigla para o partido - PDT.
+<br><br>
+No dia 25 de maio, outra reunião, desta vez na ABI – Associação Brasileira de Imprensa –, na Cinelândia, aprovou o programa, o manifesto e os estatutos do Partido Democrático Trabalhista.
+O PDT passou então a dar cumprimento ao enunciado da Carta de Lisboa, organizando-se, inicialmente, em nove Estados, sobretudo a partir do Rio de Janeiro e Rio Grande do Sul. O autoritarismo, ainda vigente, baixou normas draconianas para favorecer o partido do poder – o PDS, antiga Arena, hoje PPB – e restringir brutalmente os partidos de oposição.
+<br><br>
+Não obstante, na primeira eleição democrática de 1982, o PDT elegeu Brizola governador do Rio de Janeiro, dois senadores – um no Rio e outro em Brasília –, 24 deputados federais, credenciando-se como uma das principais forças políticas do país.
+<br><br>
+Em 1983, antes da posse de Brizola, os pedetistas fazem nova reunião nacional, em que tiram a Carta de Mendes, cidade do interior do Estado do Rio de Janeiro que abrigou o encontro. Nesse documento, eles traçam as diretrizes da ação política para a realidade do novo Brasil saído das urnas.
+<br>
+O surto neoliberal que se abateria sobre o mundo, a partir dali, entretanto, retardaria a ascensão do Partido ao poder nacional, com o povo assistindo impotente ao desmonte desse sistema cruel e desumano, credenciando-se junto ao povo.</p><br>
+                           <hr>
+                            <p></p>
+                            <hr>
+                        </div>
+                        </article>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                            	<li>
+                                	<a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'shownoticesec', :id => fs.id %></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+            	</section>
+                <aside class="sidebar">
+    <div class="side">
+                      <h3 class="head-title">Veja mais páginas</h3>
+                        <ul id="nav">
+                        <li><a href="#">PDT</a>
+                          <ul>
+                            <li><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
+                            <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
+                            <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
+                            <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
+                            <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Nossas Bandeiras</a>
+                          <ul>
+                    <li><%= link_to 'Trabalhismo', :controller => 'flags', :action => 'labour' %></li>
+                    <li><%= link_to 'Educação', :controller => 'flags', :action => 'education' %></li>
+                    <li><%= link_to 'Soberania', :controller => 'flags', :action => 'sovereignty' %></li>
+                    <li><%= link_to 'Direitos Humanos', :controller => 'flags', :action => 'humanrights' %></li>
+                    <li><%= link_to 'Previdência Social', :controller => 'flags', :action => 'foresight' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Movimentos</a>
+                          <ul>
+                            <li><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
+                    <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
+                    <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
+                  
+                          </ul>
+                        </li>
+                        <li><a href="#">PDT nos Poderes</a>
+                          <ul>
+                            <li><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
+                          </ul>
+                        </li>
+                      
+                       
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->

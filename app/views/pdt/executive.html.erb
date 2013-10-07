@@ -1,0 +1,181 @@
+
+    <div id="page_wrap">
+        <div class="container_wrap">
+            <div class="container">
+              <section class="primary-content">
+                  <div id="blog-entry">
+                      <article class="entry">
+                        <h3><%= link_to 'Executiva Nacional' %></h3> 
+                      <div class="blog-post">
+                          
+                            <hr>
+                            <div class="bread">
+                            </div>
+                            <p style="">
+                            <div id="works-container" class="work-sidebar" style="padding:0px;">
+
+                              <p>
+                                <ul style="list-style:none; padding:0px;">
+
+                                  <li>
+                                    <p>Carlos Lupi<br>
+                                    <strong>Presidente</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>Deputado André Figueiredo<br>
+                                    <strong>Vice-Presidente</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>Carlos Eduardo Vieira da Cunha<br>
+                                    <strong>1º Vice-Presidente</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Michelina Vecchio<br>
+                                    <strong>2º Vice-Presidente</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Manoel Dias<br>
+                                    <strong>Secretário Geral Nacional</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Andre Roberto Menegotto<br>
+                                    <strong>Secretário Adjunto</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Marcelo Panella<br>
+                                    <strong>Tesoureiro</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Prefeito José Queiroz<br>
+                                    <strong>Consultor Jurídico</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Acir Gurgacz<br>
+                                    <strong>Sec. de Relações Internacionais</strong></p>
+                                  </li>
+
+
+                                   <li>
+                                    <p>Márcio Bins Ely<br>
+                                    <strong>Sec. Adjunto de Relações Internacionais</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>Maria Aparecida Campos Straus<br>
+                                    <strong>Vogal</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>Sirley Soares Soalheiro<br>
+                                    <strong>Vogal</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>Acir Gurgacz<br>
+                                    <strong>Líder no Senado Federal</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>André Figueiredo<br>
+                                    <strong>Líder na Câmara dos Deputados</strong></p>
+                                  </li>
+
+                                   <li>
+                                    <p>José Alberto Reus Fortunati<br>
+                                    <strong>Vice-Presidente Regional Sul</strong></p>
+                                  </li>
+
+
+
+
+                                </ul> </p>                 
+                              
+             
+                               </div>
+
+
+                            </p><br>
+                           <hr>
+                            <p></p>
+                            <hr>
+                        </div>
+                        </article>
+                        <h3 class="h-title">Últimas noticias secundárias</h3>
+                        <div class="related-post">
+                            <ul class="da-thumbs">
+                                <% @feed = Newss.find(:all, :limit => 3, :order => 'id desc') %>
+                                <% @feed.each do |fs| %>
+                              <li>
+                                  <a href="images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
+                                        <%= image_tag fs.imagenews_url(:thumb) %>
+                                        <div><span class="image-link-icon"></span></div>
+                                    </a>
+                                    <h3><%= link_to fs.title, :controller => 'home', :action => 'shownoticesec', :id => fs.id %></h3>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </div>
+
+
+              </section>
+                <aside class="sidebar">
+    <div class="side">
+                      <h3 class="head-title">Veja mais páginas</h3>
+                        <ul id="nav">
+                        <li><a href="#">PDT</a>
+                          <ul>
+                            <li><%= link_to 'História', :controller => 'pdt', :action => 'history' %></li>
+                            <li><%= link_to 'Líderes', :controller => 'pdt', :action => 'leaders' %></li>
+                            <li><%= link_to 'Executiva Nacional', :controller => 'pdt', :action => 'executive' %></li>
+                            <li><%= link_to 'Diretório Estadual', :controller => 'pdt', :action => 'state' %></li>
+                            <li><%= link_to 'Diretórios Municipais', :controller => 'pdt', :action => 'municipal' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Nossas Bandeiras</a>
+                          <ul>
+                    <li><%= link_to 'Trabalhismo', :controller => 'flags', :action => 'labour' %></li>
+                    <li><%= link_to 'Educação', :controller => 'flags', :action => 'education' %></li>
+                    <li><%= link_to 'Soberania', :controller => 'flags', :action => 'sovereignty' %></li>
+                    <li><%= link_to 'Direitos Humanos', :controller => 'flags', :action => 'humanrights' %></li>
+                    <li><%= link_to 'Previdência Social', :controller => 'flags', :action => 'foresight' %></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Movimentos</a>
+                          <ul>
+                            <li><%= link_to 'Movimento Negro', :controller => 'movements', :action => 'black' %></li>
+                    <li><%= link_to 'Movimento da Mulher', :controller => 'movements', :action => 'woman' %></li>
+                    <li><%= link_to 'Juventude Socialista', :controller => 'movements', :action => 'social' %></li>
+                    <li><%= link_to 'Movimento Comunitário', :controller => 'movements', :action => 'union' %></li>
+                    <li><%= link_to 'Movimento FLB/PA', :controller => 'movements', :action => 'retired' %></li>
+                  
+                          </ul>
+                        </li>
+                        <li><a href="#">PDT nos Poderes</a>
+                          <ul>
+                            <li><%= link_to 'Executivo', :controller => 'powers', :action => 'executive' %></li>
+                    <li><%= link_to 'Judiciário', :controller => 'powers', :action => 'legislative' %></li>
+                          </ul>
+                        </li>
+                      
+                       
+                      </ul>
+                    </div><!-- end side -->
+                 
+              </aside>
+            </div><!--end:container-->
+        </div><!--end:container_wrap-->
+    </div><!--end:page_wrap-->
