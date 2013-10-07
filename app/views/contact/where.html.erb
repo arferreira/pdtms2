@@ -17,8 +17,10 @@
                         <li class="skype">pdtms13</li>
                     </ul>
                     <h2 class="h-title">Por favor envie-nos um contato por email</h2><br>
-                    <div id="form-message"><p id="notice"><%= notice %></p></div>
-
+                    <div id="form-message"><p id="notice"></p></div>
+                    <div class="alert green_alert" style="width:80%;">
+                                <p><%= notice %></p>
+                            </div>
                     <!-- renderizar formulario de contato -->
                     <%= form_tag(dispatch_email_path, :class => 'contactform', method: :post) do %>
                          <%= label_tag "user_info[name]", "Nome*", :class => 'label-block' %><br/>
