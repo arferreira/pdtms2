@@ -15,7 +15,7 @@ ssh_options[:forward_agent] = true
 
 default_run_options[:pty] = true
 
-set :repository, 'git@github.com:arferreira/pdtms.git'
+set :repository, 'git@github.com:arferreira/pdtms2.git'
 
 set :branch, 'master'
 
