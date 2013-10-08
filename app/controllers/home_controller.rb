@@ -1,8 +1,6 @@
 #encoding: utf-8
 class HomeController < ApplicationController
-   helper_method :survey, :participant
-
-   helper "contests/surveys"
+   
   
   def index
   	#listando as noticias destaque
@@ -16,7 +14,7 @@ class HomeController < ApplicationController
 
     @moves = feedmoves
 
-    @poll = survey
+
 
     @galerias = feedgaleria
 
@@ -78,9 +76,6 @@ class HomeController < ApplicationController
     @participant ||= current_user
   end
 
-  def survey
-    @survey ||= Survey::Survey.active.first
-  end
 
   # Método para trazer as noticias destaques
   def featured_news

@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/runtimerevolution/survey.git
-  revision: c90e32edec64f3ba7188a84b0c3b4edd16c0e404
-  specs:
-    survey (0.1)
-      rails
-
-GIT
   remote: git://github.com/stefanoverna/activeadmin-dragonfly.git
   revision: d39f4689c92b79d051bb079cd2a7d98359f00b83
   specs:
@@ -261,6 +254,5 @@ DEPENDENCIES
   shareable
   social-share-button
   sqlite3
-  survey!
   uglifier (>= 1.0.3)
   unicorn

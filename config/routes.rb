@@ -1,15 +1,6 @@
 Pdtms::Application.routes.draw do
 
-  namespace :admin do
-    resources :surveys
-    resources :attempts, :only => [:new, :create]
-  end
-
-
-  namespace :contests do
-    resources :surveys
-    resources :attempts, :only => [:new, :create]
-  end
+  
 
   resources :fotos
 

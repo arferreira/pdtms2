@@ -48,7 +48,7 @@ gem 'haml'
 
 gem 'fastercsv'
 
-gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
+#gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 
