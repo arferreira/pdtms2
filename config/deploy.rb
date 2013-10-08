@@ -101,6 +101,19 @@ task :log, :except => { :no_release => true } do
 
   end
 end
+
+namespace :releases do
+
+desc "show releases"
+
+task :view, :except => { :no_release => true } do
+
+  run "ls /var/www/pdtms/releases "
+
+  end
+end
+
+
 namespace :rake_routes do
 desc "Run the super-awesome rake task"
 task :executa do
