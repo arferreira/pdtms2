@@ -181,10 +181,24 @@
                       <div class="one-half">
                           <h2 class="head-title"><span>Enquete</span></h2>
                           <!-- enquete -->
+                          <p style="color:red;"><%= notice %></p>
                           
-                          <% # render 'contests/attempts/form' %>
+                           <%= form_tag(controller: "home", action: "vota_enquete", method: "post")  do  %>
+
+                            <%= label_tag(@poll.questionmain) %>
+
+                            <br><br>
+
+                            <%= radio_button_tag(:vote, 1) %><%= label_tag(@poll.oneanswer) %><br>
+                            <%= radio_button_tag(:vote, 2) %><%= label_tag(@poll.twoanswer) %><br>
+                            <%= radio_button_tag(:vote, 3) %><%= label_tag(@poll.threeanswer) %><br>
+                            <%= radio_button_tag(:vote, 4) %><%= label_tag(@poll.fouranswer) %><br>
+                            <%= hidden_field_tag(:poll_id, @poll.id) %>
+                            <hr>
+                            <%= submit_tag("Votar") %>
 
 
+                           <% end %>
                       </div>
                     </div><!--end:whole-->
 

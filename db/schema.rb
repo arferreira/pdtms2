@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001190655) do
+ActiveRecord::Schema.define(:version => 20131008154753) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -209,6 +209,25 @@ ActiveRecord::Schema.define(:version => 20131001190655) do
   end
 
   add_index "photos", ["gallery_id_id"], :name => "index_photos_on_gallery_id_id"
+
+  create_table "poll_votes", :force => true do |t|
+    t.integer  "vote"
+    t.integer  "poll_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "poll_votes", ["poll_id"], :name => "index_poll_votes_on_poll_id"
+
+  create_table "polls", :force => true do |t|
+    t.string   "questionmain"
+    t.string   "oneanswer"
+    t.string   "twoanswer"
+    t.string   "threeanswer"
+    t.string   "fouranswer"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "previdenciasocials", :force => true do |t|
     t.text     "content"

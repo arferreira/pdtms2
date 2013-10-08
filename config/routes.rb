@@ -2,6 +2,9 @@ Pdtms::Application.routes.draw do
 
   
 
+  resources :polls
+
+
   resources :fotos
 
 
@@ -124,7 +127,7 @@ Pdtms::Application.routes.draw do
 
   match "contact", to: "contact#where", as: "contact"
   match "dispatch_email", to: "contact#dispatch_email", as: "dispatch_email", method: :post
-
+  match "vota", to: "home#vota_enquete", as: "vota"
  
 
   # The priority is based upon order of creation:

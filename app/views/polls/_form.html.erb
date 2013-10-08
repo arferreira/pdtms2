@@ -1,0 +1,37 @@
+<%= form_for(@poll) do |f| %>
+  <% if @poll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poll.errors.count, "error") %> prohibited this poll from being saved:</h2>
+
+      <ul>
+      <% @poll.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :questionmain %><br />
+    <%= f.text_field :questionmain %>
+  </div>
+  <div class="field">
+    <%= f.label :oneanswer %><br />
+    <%= f.text_field :oneanswer %>
+  </div>
+  <div class="field">
+    <%= f.label :twoanswer %><br />
+    <%= f.text_field :twoanswer %>
+  </div>
+  <div class="field">
+    <%= f.label :threeanswer %><br />
+    <%= f.text_field :threeanswer %>
+  </div>
+  <div class="field">
+    <%= f.label :fouranswer %><br />
+    <%= f.text_field :fouranswer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -24,16 +24,30 @@ class HomeController < ApplicationController
     @count = 0
     @aux = 0
 
-    #@survey =  Survey::Survey.active.first
-    #@attempt = @survey.attempts.new
-    #@attempt.answers.build
-    #@participant = current_user # you have to decide what to do here
-
+    
+    @poll = Poll.last
 
     @events = Event.all
 
    
 
+  end
+
+  def vota_enquete
+
+
+    @voto = PollVote.new(:vote => params[:vote], :poll_id => params[:poll_id])
+
+    #@voto.save
+
+    if @voto.save
+    
+    flash[:notice] = "Seu voto foi recebido com sucesso!"
+      
+    end
+
+    redirect_to :controller => "home", :action => "index"
+    
   end
 
   def eventofday

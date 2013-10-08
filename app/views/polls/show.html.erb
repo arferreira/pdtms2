@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pergunta principal:</b>
+  <%= @poll.questionmain %>
+</p>
+
+<p>
+  <b>Escolha 1:</b>
+  <%= @poll.oneanswer %>
+</p>
+
+<p>
+  <b>Escolha 2:</b>
+  <%= @poll.twoanswer %>
+</p>
+
+<p>
+  <b>Escolha 3:</b>
+  <%= @poll.threeanswer %>
+</p>
+
+<p>
+  <b>Escolha 4:</b>
+  <%= @poll.fouranswer %>
+</p>
+
+
+<%= link_to 'Edit', edit_poll_path(@poll) %> |
+<%= link_to 'Back', polls_path %>
