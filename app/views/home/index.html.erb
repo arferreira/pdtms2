@@ -22,7 +22,7 @@
                         <% @featured_news.each do |fn| %>
                           <a data-slide-index="0" href="#" style="height:48px;">
                             <%= image_tag(fn.imagenews_url(:mega_thumb).to_s , :style => "height:40px;")  %>
-                            <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description, length: 70) %></span></h5>
+                            <h5 style="color:#000; "><%= fn.title %><br><span><%=  truncate(fn.description, length: 50) %></span></h5>
                           </a>
                           <% end %>
                       </div> 
@@ -38,7 +38,7 @@
                         <div class="one-fourth first">
                             <%= image_tag sn.imagenews_url(:mini_thumb).to_s %>
                             <h3><%= truncate sn.title %></h3>
-                            <p style="min-height:80px; min-width:256px;"><%= truncate(sn.description, length: 200) %></p>
+                            <p style="min-height:80px; max-width:230px;"><%= truncate(sn.description, length: 200) %></p>
                             <span><%= link_to 'Ler Notícia', :controller => 'home', :action => 'shownoticesec', :id => sn.id %></span>
                         </div>
                         <% end %>
@@ -59,11 +59,11 @@
                             <li>
                                 <a href="images/preview/work_1_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here">
                                     <iframe width="245" height="235" src="<%= move.link %>" frameborder="0" allowfullscreen></iframe>
-                                    <div>
+                                    <!--<div>
                                         <h2>PDT MS</h2>
                                         <span class="image-hover-icon"></span>
                                         <small>Nossos videos</small>
-                                    </div>
+                                    </div>-->
                                 </a>
                                 <h2 class="entry-title"><a href="#">PDT MS</a></h2>
                             </li>
@@ -146,7 +146,11 @@
                           <ul class="nav">
                             <% @galleryall.each do |gal| %>
 
-                            <li class="<% if  @count == 0 %>nav-one<% end %> <% if  @count == 1 %>nav-two<% end %>"><a href="<% if  @count == 0 %>#recent<% end %><% if  @count == 1 %>#popular<% end %>" class="<% if  @count == 0 %>current<% end %><% if  @count == 1 %><% end %>"><%= gal.name %></a></li>
+                            <li class="<% if  @count == 0 %>nav-one<% end %> <% if  @count == 1 %>nav-two<% end %>">
+                              <a href="<% if  @count == 0 %>#recent<% end %><% if  @count == 1 %>#popular<% end %>"  class="<% if  @count == 0 %>current<% end %><% if  @count == 1 %><% end %>">
+                                <%= gal.name %>
+                              </a>
+                            </li>
                               
                              <% @count = @count + 1 %> 
 
@@ -164,8 +168,8 @@
                               <% @foto.each do |f| %>
                                 <div class="third">
                                     <%= image_tag f.imagefoto_url(:mini_thumb).to_s %>
-                                    <span><a href="#"><%= gal.name %></a></span><br>
-                                    <small><a href="blog.html"><%= gal.created_at.strftime('%d %m %y') %></a></small>
+                                    <span><a href="<%= f.imagefoto_url(:mega_thumb).to_s %>" data-lightbox="roadtrip"><%= gal.name %></a></span><br>
+                                    <small><a href="<%= f.imagefoto_url(:mega_thumb).to_s %>" data-lightbox="roadtrip"><%= gal.created_at.strftime('%d %m %y') %></a></small>
                                 </div>
 
                                <% end %> 

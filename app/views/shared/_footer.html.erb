@@ -23,8 +23,8 @@
                 <% @fotos.each do |foto| %>
                 <div class="third"> 
                     <%= image_tag foto.imagefoto_url(:mini_thumb).to_s %> 
-                    <small><a href="blog.html"><%= @galeria.created_at.strftime('%d/%M/%Y') %></a></small> 
-                    <h4><a href="#"><%= @galeria.name %></a></h4>
+                    <small><a href="#"><%= @galeria.created_at.strftime('%d/%M/%Y') %></a></small> 
+                    <h4><a href="<%= foto.imagefoto_url(:mega_thumb).to_s %>" data-lightbox="roadtrip"><%= @galeria.name %></a></h4>
                     <p><%= @galeria.description %></p>
                 </div>
                <% end %>
